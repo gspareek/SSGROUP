@@ -14,7 +14,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
-
+<link rel="stylesheet" href="Form.css">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
@@ -299,7 +299,7 @@
                         </div>
                     </div>
                     <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="detail.html">Course Detail</a>
+                        <a class="btn btn-primary" href="#">Course Detail</a>
                     </div>
                 </div>
             </div>
@@ -327,9 +327,65 @@
                     
                     
                     
-           <script src="https://sheetdb.io/s/f/jtei67s9pee9t.js"></script>
+           
                     
-                    
+           <div class="form-container">
+            <form>
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" class="color" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="contact">Contact:</label>
+                <input type="text" id="contact" name="contact" class="color" required>
+              </div>
+              <div class="form-group">
+                <label for="course">Course:</label>
+                <input type="text" id="course" name="course" class="color" required>
+              </div>
+              <div class="form-group">
+                <button type="button" onclick="checkForm()">Submit</button>
+              </div>
+            </form>
+          </div>
+          <script>
+            function checkForm(){
+                var set = document.getElementsByClassName("color")
+if(set[0].value!==""|| set[1].value.length==10||set[2].value!==""){
+    senRequ();
+    var formContainer = document.getElementsByClassName("form-container")
+formContainer[0].innerHTML="<h2>THANK YOU</h2>"
+
+}
+else{
+    alert("Please fill the form with proper name, 10 digit no of contact no. Course name")
+}
+            }
+ async function senRequ(){
+    
+ var set = document.getElementsByClassName("color")
+
+var string = { "Name": set[0].value,
+    "Contact": set[1].value,
+    "Course": set[2].value,
+    }
+
+
+     fetch('https://sheetdb.io/api/v1/qqq35gbtvsqa3', {
+  method: "POST",
+  headers: {
+					'Content-Type': 'application/json'
+				},
+  body: JSON.stringify(string),
+})
+  .then((res) => res.json())
+
+  .then((json) => alert("Congratulation for joining with us"+JSON.stringify(json)));
+
+
+
+}
+          </script>
                     
                     
                     
