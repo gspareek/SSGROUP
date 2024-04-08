@@ -351,7 +351,7 @@
           <script>
             function checkForm(){
                 var set = document.getElementsByClassName("color")
-if(set[0].value!==""|| set[1].value.length==10||set[2].value!==""){
+if(set[0].value!=="" && set[1].value.length==10 && set[2].value!==""){
     senRequ();
     var formContainer = document.getElementsByClassName("form-container")
 formContainer[0].innerHTML="<h2>THANK YOU</h2>"
