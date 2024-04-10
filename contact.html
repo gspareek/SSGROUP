@@ -24,6 +24,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="Form.css">
 </head>
 
 <body>
@@ -183,7 +184,80 @@
         </div>
     </div>
     <!-- Contact End -->
+    <div class="row justify-content-center bg-image mx-0 mb-5">
+        <div class="col-lg-6 py-5">
+            <div id="link" class="bg-white p-5 my-5">
+                <h1 class="text-center mb-4">30% Off Only PGDCA, O Level, Tally Prime</h1>       
+       <div class="form-container">
+        <form>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" class="color" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" name="contact" class="color" required>
+          </div>
+          <div class="form-group">
+            <label for="course">Course:</label>
+            
 
+            <select type="text" style="min-width:100%;padding: 10px 0px;background-color:white;border-radius: 5px;border: 1px solid rgb(199, 190,190);" type="option" id="course" name="course" class="color">
+                <option type="text" value="RS-CIT">RS-CIT</option>
+                <option type="text" value="CS-SFI">RS-CFA</option>
+        <option type="text" value="PGDCA">PGDCA</option>
+        <option type="text" value="O-LEVEL">O-LEVEL</option>
+                <option type="text" value="TALLY">Tally Prime</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <button type="button" onclick="checkForm()">Submit</button>
+          </div>
+        </form>
+      </div>
+      <script>
+        function checkForm(){
+            var set = document.getElementsByClassName("color")
+if(set[0].value!=="" && set[1].value.length==10 && set[2].value!==""){
+senRequ();
+var formContainer = document.getElementsByClassName("form-container")
+formContainer[0].innerHTML="<h2>THANK YOU</h2>"
+
+}
+else{
+alert("Please fill the form with proper name, 10 digit no of contact no. Course name")
+}
+        }
+async function senRequ(){
+
+var set = document.getElementsByClassName("color")
+
+var string = { "Name": set[0].value,
+"Contact": set[1].value,
+"Course": set[2].value,
+}
+
+
+ fetch('https://sheetdb.io/api/v1/qqq35gbtvsqa3', {
+method: "POST",
+headers: {
+                'Content-Type': 'application/json'
+            },
+body: JSON.stringify(string),
+})
+.then((res) => res.json())
+
+.then((json) => alert("Congratulation for joining with us"+JSON.stringify(json)));
+
+
+
+}
+      </script>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer Start -->
     <div class="container-fluid position-relative overlay-top bg-dark text-white-50 py-5" style="margin-top: 90px;">
