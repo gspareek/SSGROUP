@@ -14,8 +14,8 @@
   .content {
     position: relative;
 
-    width: 70%;
-    height: 70%;
+    width: 67%;
+    height:auto;
  /* adjust max-width as needed */
     background-color: rgba(0, 0, 0, 0.0); /* white background for content */
     
