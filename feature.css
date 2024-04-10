@@ -10,8 +10,8 @@
 padding-bottom: 0px;
   }
   .box1 {
-    width: 30%;
-
+    width: 25%;
+min-width: 370px;
     padding: 0px;
     flex: 1;
     
@@ -24,11 +24,14 @@ background-image:linear-gradient(to right,rgb(178, 178, 235),  rgb(178, 178, 237
   }
   @media (min-width: 768px) {
     .container1 {
+        display: flex;
       flex-direction: column;
       justify-content: center;
     }
 .box1,.box2{
     width: 100%;
+    min-width: 350px;
+
 }
 }
 
