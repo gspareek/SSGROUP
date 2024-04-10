@@ -27,7 +27,7 @@ margin-top: 50px;
   .close-btn {
     position: absolute;
     display: inline-block;
-    top: 0px;
+    top: 4%;
     right: 16.5%;
     cursor: pointer;
     color:white;
