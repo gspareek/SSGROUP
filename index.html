@@ -26,7 +26,12 @@
     <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="fix.css">
     <style>
-        html{
+      *{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+      html{
             scroll-behavior: smooth;
         }
     </style>
@@ -203,13 +208,13 @@
               <h1 style="margin: 20px;">Why should we be your first choice for service?</h1>
           </div>
           <p style="padding: 30px;box-sizing:border-box;border:2px solid gray;background:gray;color:white;margin: 0px;">Our aim is to provide quality in service and to work with the satisfaction of those who connect with us. To prepare an ideal computer operator, web designer, good accountant for accounting. Creating a team working in efficient hardware and software. Providing good service in the field of Printing, CCTV, Networking.</p>
-          <div style=" flex-direction:row" class="container1"> 
-          <div style="position: relative"   class="box1">
-        <div style="position: absolute;width:60%;top: 10%;left: 10%;">
-            <img class="image" src="feature.jpg" alt="Placeholder Image" width="100%;max-height:250px;">
+          <div style="display: flex;flex-wrap: wrap;flex-direction: row ;justify-content:space-around;align-items: center;" class="container1"> 
+          <div  style="max-width: 400px;" class="box1">
+        <div id="images" style="width: 100%; box-sizing: border-box;">
+            <img class="image" src="feature.jpg" alt="Placeholder Image" width="100%" height="auto">
         </div>
           </div>
-        <div style="background-color: rgb(183, 197, 215);border-radius: 10px;padding: 10px;min-width: 50%;" class="box2">
+        <div style="background-color: rgb(183, 197, 215);border-radius: 10px;padding: 10px;max-width: 700px;" class="box2">
         <h2 style="margin:30px 40%;color:aliceblue;text-shadow:2px 2px 1px gray;display: inline-block;">Features</h2>
           <div class="d-flex mb-3">
             <div class="btn-icon bg-primary mr-4">

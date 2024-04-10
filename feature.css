@@ -1,8 +1,17 @@
+
+
+
+
+
+
+
+
 .container1 {
+
     width: 100%;
     display: flex;
     flex-direction:raw;
-    
+    box-sizing: border-box;
     justify-content: space-between;
     background-color: rgb(178, 178, 235);
     gap: 10px;
@@ -11,7 +20,7 @@ padding-bottom: 0px;
   }
   .box1 {
     width: 25%;
-min-width: 370px;
+min-width: 360px;
     padding: 0px;
     flex: 1;
     
@@ -21,6 +30,9 @@ min-width: 370px;
 background-image:linear-gradient(to right,rgb(178, 178, 235),  rgb(178, 178, 237));
     padding: 10px;
     flex: 1;
+  }
+  #images{
+    margin-top: 110px;
   }
   @media (min-width: 768px) {
     .container1 {
@@ -32,6 +44,9 @@ background-image:linear-gradient(to right,rgb(178, 178, 235),  rgb(178, 178, 237
     width: 100%;
     min-width: 350px;
 
+}
+#images{
+    margin-top: 0px;
 }
 }
 
