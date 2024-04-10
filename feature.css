@@ -6,21 +6,24 @@
 
 
 
+
 .container1 {
 
-    width: 100%;
+    width: 99.9%;
     display: flex;
     flex-direction:raw;
     box-sizing: border-box;
+margin: 0px;
+padding: 0px;
     justify-content: space-between;
     background-color: rgb(178, 178, 235);
     gap: 10px;
-    margin-top: 0px;
-padding-bottom: 0px;
+  
   }
   .box1 {
     width: 25%;
 min-width: 360px;
+box-sizing: border-box;
     padding: 0px;
     flex: 1;
     
@@ -28,8 +31,10 @@ min-width: 360px;
   .box2 {
     width: 70%;
 background-image:linear-gradient(to right,rgb(178, 178, 235),  rgb(178, 178, 237));
-    padding: 10px;
-    flex: 1;
+box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    
   }
   #images{
     margin-top: 110px;
