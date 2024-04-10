@@ -13,7 +13,7 @@
 
   .content {
     position: relative;
-
+margin-top: 50px;
     width: 67%;
     height:auto;
  /* adjust max-width as needed */
@@ -28,7 +28,7 @@
     position: absolute;
     display: inline-block;
     top: 0px;
-    right: 0px;
+    right: 16.5%;
     cursor: pointer;
     color:white;
     font-size: 40px;
