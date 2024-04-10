@@ -13,8 +13,8 @@
 
   .content {
     position: relative;
-margin-top: 50px;
-    width: 67%;
+margin-top: 70px;
+    width: 65%;
     height:auto;
  /* adjust max-width as needed */
     background-color: rgba(0, 0, 0, 0.0); /* white background for content */
@@ -27,8 +27,8 @@ margin-top: 50px;
   .close-btn {
     position: absolute;
     display: inline-block;
-    top: 4%;
-    right: 16.5%;
+    top:-11%;
+    right:0%;
     cursor: pointer;
     color:white;
     font-size: 40px;
