@@ -34,6 +34,19 @@
       html{
             scroll-behavior: smooth;
         }
+        #headstyle{
+            background-image: url("https://res.cloudinary.com/dxbci2uok/image/upload/v1713200746/IMG-20240415-WA0014_qkiiov.jpg");
+       
+        }
+        #cont{
+        background-color:rgba(0, 0, 0, .5);
+        }
+        #nav{
+position: sticky;
+top: 0px;
+left: 0px;
+z-index: 10;
+        }
     </style>
 </head>
 
@@ -75,7 +88,7 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid p-0">
+    <div id="nav" class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
             <a href="index.html" class="navbar-brand ml-lg-3">
                 <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-book-reader mr-3"></i>S S INFOTECH</h1>
@@ -109,11 +122,11 @@
 
 
     <!-- Header Start -->
-    <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px;">
-        <div class="container text-center my-5 py-5">
+    <div id="headstyle" style="text-shadow: 5px 5px 5px gray;box-shadow: 5px 5px 5px gray;" class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px;">
+        <div id="cont" class="container text-center my-5 py-5">
             <h3 class="text-white mt-2 mb-4">Learn From Home</h3>
             <h3 class="text-white display-3 mb-3">Computer Education</h3>
-            <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
+            <div  class="mx-auto mb-5" style="width: 100%; max-width: 600px; box-shadow: 5px 5px 5px;">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <button class="btn btn-outline-light bg-white text-body px-4 dropdown-toggle" type="button" data-toggle="dropdown"
