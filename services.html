@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eshop</title>
+    
+    <link rel="stylesheet" href="./bootstrap.css">
+    <link rel="icon" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <style>
+      *{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+/*------------------------------------------------------Header----------------------------------------------------*/
+#bd-title{
+    font-size:25px;
+    font-family: 'Lobster', cursive;
+}
+@media all and (min-width:900px){
+    .mrl{
+        margin-left:200px;
+    }
+    .reg2{
+        position:absolute;
+        right:50px;
+    }
+    .reg1{
+        position:absolute;
+        right:200px;
+    }
+}
+/*------------------------------------------------------Header----------------------------------------------------*/
+
+/*------------------------------------------------------Nav----------------------------------------------------*/
+@media all and (min-width:991px){
+    .nav2{
+        background-color:#f2f2f2;
+        height:30px;
+        overflow: hidden;
+    }
+    .nav2 > ul >li{
+        display:inline-block;
+        margin-left:50px;
+    }
+    .nav2 > ul >li > a:hover{
+        text-decoration: none;
+        list-style: none;
+    }
+    nav > ul >li >a{
+        font-size:15px;
+        font-weight:bold;
+        color:black;
+    }
+    #one{
+        margin-left:200px;
+    
+    }
+}
+@media all and (max-width:1280px){
+    .nav2{
+        display:none;
+    }
+}
+/*------------------------------------------------------Nav----------------------------------------------------*/
+/*------------------------------------------------------Cards----------------------------------------------------*/
+.card-icon{
+    height:30px;
+    width:30px;
+    background-color:#333333;
+    border-radius:50%;
+}
+/*------------------------------------------------------Cards----------------------------------------------------*/
+
+/*------------------------------------------------------Banner----------------------------------------------------*/
+
+.banner-link{
+    text-decoration: none;
+    list-style:none;
+}
+/*------------------------------------------------------Banner----------------------------------------------------*/
+
+/*------------------------------------------------------Card2---------------------------------------------------->*/
+.cd-h4{
+    font-weight:bold; 
+    margin:5px; 
+    padding-top:5px;
+    padding-left:20px; 
+    padding-bottom:20px;
+    background-color:#00DED1;
+    max-width:330px;
+    max-height:40px;
+    border-radius:30px;
+}
+
+.txt-sz{
+    position: relative;
+}
+.bb-btn{
+    position: absolute;
+    bottom:10px;
+}
+@media all and (max-width:576px){
+    .card2sty{
+        height:350px;
+    }
+}
+@media all and (min-width:577px){
+    .card2sty{
+        height:450px;
+    }
+}
+
+.card2sty:hover{
+    background-color:#F8F8FF;
+}
+/*------------------------------------------------------Card2----------------------------------------------------*/
+
+
+
+@media all and (max-width:577px){
+    .mm{
+        margin-top:10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------Footer------------------------------------------------- */
+.footdes{
+    position: relative;
+    bottom:0;
+    width:100%;
+    height:350px;
+      
+}
+.footer-1{
+    height:300px;
+}
+.footer-2{
+    height:75px;
+    border-top:1px solid white;
+}
+.footer-2-div{
+    margin-left:100px; margin-top:10px;
+}
+.footer-2-div > a{
+    margin-left:20px;
+}
+.footer-2-div > a >i{
+    font-size: 30px;
+}
+.foocol{
+    min-height:300px;
+    background-color: #172337; 
+}
+@media all and (min-width:576px){
+    .foocol{
+        border-right: 2px dotted white;
+    }
+}
+@media all and (max-width:575px){
+    .foocol{
+        border-bottom: 2px dotted white;
+    }
+    .foocol:last-child{
+        border-bottom: none;
+    }
+}
+.foocol-2{
+    background-color: #172337; 
+}
+.foocol:last-child{
+    border-right: none;
+}
+.fh4{
+    margin-top:10px;
+    text-transform: uppercase;
+}
+.set{height: 400px;
+max-height: 400px;
+width: 100%;
+}
+/*------------------------------------------------Footer------------------------------------------------- */
+
+    </style>
+</head>
+<body>
+  <!------------------------------------------------------Header---------------------------------------------------->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white" style="max-height:70px;z-index:10;">
+        <a class="navbar-brand" href="index.html"><span id="bd-title"><img src="gallery/navbrd.png" style="max-height:50px;">SS.INFOTECC</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navdp" aria-controls="navdp" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse bg-white" style="width:100%;" id="navdp">
+          <form class="form-inline bg-white  my-2 my-lg-0 mrl">
+            <input class="form-control mr-sm-2 srh-w bg-white" style="width:500px;" type="search" placeholder="Search..." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <button type="button" class="btn btn-danger reg1">Sign In</button>
+          <button type="button" class="btn btn-info reg2"><i class="fas fa-shopping-cart"> Cart</i>
+            &nbsp;<span class="badge badge-light">0</span>
+          </button>
+        </div>
+      </nav>
+      <nav class="nav2">
+        <ul class="ul2">
+            <li id="one"><a href="electronics.html">Electronics</a></li>
+            <li id="two"><a href="mob.html">Mobiles</a></li>
+            <li id="three"><a href="laptops.html">Computers & Laptops</a></li>
+            <li id="four"><a href="#">Kitchen Tools</a></li>
+            <li id="five"><a href="#">Books</a></li>
+            <li id="six"><a href="#">Fashion Wear</a></li>
+            <li id="seven"><a href="#">Sports</a></li>
+            <li id="eight"><a href="#">Recharge</a></li>
+            <li id="nine"><a href="#">Offer Zone</a></li>
+        </ul>
+      </nav>
+<!------------------------------------------------------Header---------------------------------------------------->
+
+<!------------------------------------------------------Carousel---------------------------------------------------->
+<div id="carousel1" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel1" data-slide-to="1"></li>
+    <li data-target="#carousel1" data-slide-to="2"></li>
+    <li data-target="#carousel1" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="set" src="imgset.png" class="d-block w-100 img-fluid"  alt="1">
+    </div>
+    <div class="carousel-item">
+      <img class="set" src="page-header.jpg" class="d-block w-100 img-fluid" alt="2">
+    </div>
+    <div class="carousel-item">
+      <img class="set" src="seting.jpg" class="d-block w-100 img-fluid"/>
+    </div>
+    <div class="carousel-item">
+      <img class="set" src="stuf.jpg" class="d-block w-100 img-fluid" alt="4">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<!------------------------------------------------------Carousel---------------------------------------------------->
+
+<!------------------------------------------------------Cards---------------------------------------------------->
+<div class="container-fluid pt-2 pb-2" style="background-color:#F0FFFF; border-bottom:1px solid darkgray;">
+  <div class="row">
+    <div class="col-sm-12">
+      <div id="inm" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="row">
+                  <div class="col-sm-6 col-lg-3">
+                    <div class="card" >
+                      <img src="https://palfrey.in/cdn/shop/products/3_20912a49-60f2-472c-b861-f2051325d454_2048x2048.jpg?v=1638443253" class="img-fluid" alt="card1">
+                        <div class="card-body">
+                          <h4 class="card-title">Electric boards</h4>
+                          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                          <button class="btn btn-warning" type="button">Buy</button>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-lg-3 mm">
+                    <div  class="card">
+                      <img src="https://thumbs.dreamstime.com/z/black-wire-bundle-15931728.jpg" class="img-fluid" display="inline-block" width="50%" height="500px" alt="card1">
+                        <div class="card-body">
+                          <h4 class="card-title">Fitting-Wires</h4>
+                          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                          <button class="btn btn-warning" type="button">Buy</button>
+                        </div>
+                    </div>
+                  </div>  
+                  <div class="col-sm-6 col-lg-3 mm">
+                    <div class="card">
+                      <img src="data:image/jpeg;base64,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" class="img-fluid" alt="card1">
+                        <div class="card-body">
+                          <h4 class="card-title">Keyboard</h4>
+                          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                          <button class="btn btn-warning" type="button">Buy</button>
+                        </div>
+                    </div>
+                  </div>   
+                  <div class="col-sm-6 col-lg-3 mm">
+                    <div class="card">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPcaK4aTsGkspQFv7DeFRHgGD0VeJ7euQzFdaW-4Q9VIYDaw1fGZvSi4Atu_oIit703k0&usqp=CAU" class="img-fluid"/>
+                        <div class="card-body">
+                          <h4 class="card-title">Lap-Top Charger</h4>
+                          <p class="card-text">samsung,Dell</p>
+                          <button class="btn btn-warning" type="button">Buy</button>
+                        </div>
+                    </div>
+                  </div> 
+               </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row">
+                  <div class="col-sm-6 col-lg-3">
+                    <div class="card" >
+                      <img src="SKS1.jpg" class="img-fluid" >
+                        <div class="card-body">
+                          <h4 class="card-title">Lap-Tops</h4>
+                          <p class="card-text">All companies all modals availablity </p>
+                          <button class="btn btn-warning" type="button">Buy</button>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-lg-3">
+                    <div class="card">
+                      <img src="SKS2.jpg" class="img-fluid" alt="card1">
+                        <div class="card-body">
+                          <h4 class="card-title">Printers</h4>
+                          <p class="card-text">New Printers, ink change,New Rolls </p>
+                          <button class="btn btn-warning" type="button">Buy</button>
+                        </div>
+                    </div>
+                  </div>  
+                  <div class="col-sm-6 col-lg-3">
+                    <div class="card">
+                      <img src="SKS3.jpg" class="img-fluid" alt="card1">
+                        <div class="card-body">
+                          <h4 class="card-title">Maintanace</h4>
+                          <p class="card-text">laptop ,Computers,Printers Maintanace facilities </p>
+                          <button class="btn btn-warning" type="button">Buy</button>
+                        </div>
+                    </div>
+                  </div>   
+                  <div class="col-sm-6 col-lg-3">
+                    <div class="card">
+                      <img src="gallery/card3.jpg" class="img-fluid" alt="card1">
+                        <div class="card-body">
+                          <h4 class="card-title">Keyboard</h4>
+                          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                          <button class="btn btn-warning" type="button">Buy</button>
+                        </div>
+                    </div>
+                  </div>                  
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+        <a class="carousel-control-prev" style="margin-left:20px; width:50px;" href="#inm" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon card-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" style="margin-right:20px; width:50px;" href="#inm" role="button" data-slide="next">
+          <span class="carousel-control-next-icon card-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!------------------------------------------------------Cards---------------------------------------------------->
+
+<!------------------------------------------------------Banner---------------------------------------------------->
+<div>
+  <a class="banner-link" href="#"><img src="gallery/banner.jpg" alt="mens-wear-banner" class="image-fluid" style="width:100%; height:399px; border-bottom:1px solid darkgray;"></a>
+</div>
+
+<!------------------------------------------------------Banner---------------------------------------------------->
+
+<!------------------------------------------------------Card2---------------------------------------------------->
+<div class="container-fluid" style="background-color:#F0F8FF; border-bottom:1px solid darkgray; overflow:hidden;"> 
+  <div class="row mb-3">
+    <div class="col-sm-12 ">
+      <h4 class="cd-h4 mt-3 mb-3">Latest Laptops Collections</h4>
+      <div class="card-group">
+        <div class="card col-sm-4 col-lg-2 card2sty">
+          <img src="gallery/laptop1.jpeg" style="margin:5px; max-height:200px; max-width:200px;" alt="lap1" class="image-fluid">
+          <div class="card-body cd-txt">
+            <h4 class="card-title">Dell Inspiron</h4>
+            <p class="card-text txt-sz">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nihil.</p>
+            <a href="#" class="btn btn-warning bb-btn">Buy</a>
+          </div>
+        </div>
+        <div class="card col-sm-4 col-lg-2 card2sty">
+          <img src="gallery/laptop2.jpeg" style="margin:5px; max-height:200px; max-width:200px;" alt="lap2" class="image-fluid">
+          <div class="card-body cd-txt">
+            <h4 class="card-title">Acer</h4>
+            <p class="card-text txt-sz">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nihil.</p>
+            <a href="#" class="btn btn-warning bb-btn">Buy</a>
+          </div>
+        </div>
+        <div class="card col-sm-4 col-lg-2 card2sty">
+          <img src="gallery/laptop3.jpeg" style="margin:5px; max-height:200px; max-width:200px;" alt="lap3" class="image-fluid">
+          <div class="card-body cd-txt">
+            <h4 class="card-title">Apple MAC</h4>
+            <p class="card-text txt-sz">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nihil.</p>
+            <a href="#" class="btn btn-warning bb-btn">Buy</a>
+          </div>
+        </div>
+        <div class="card col-sm-4 col-lg-2 card2sty">
+          <img src="gallery/laptop4.jpeg" style="margin:5px; max-height:200px; max-width:200px;" alt="lap4" class="image-fluid">
+          <div class="card-body cd-txt">
+            <h4 class="card-title">Hp Pavilion</h4>
+            <p class="card-text txt-sz">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nihil.</p>
+            <a href="#" class="btn btn-warning bb-btn">Buy</a>
+          </div>
+        </div>
+        <div class="card col-sm-4 col-lg-2 card2sty">
+          <img src="gallery/laptop5.jpeg" style="margin:5px; max-height:200px; max-width:200px;" alt="lap5" class="image-fluid">
+          <div class="card-body cd-txt">
+            <h4 class="card-title">Lenovo Ideapad</h4>
+            <p class="card-text txt-sz">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nihil.</p>
+            <a href="#" class="btn btn-warning bb-btn">Buy</a>
+          </div>
+        </div>
+        <div class="card col-sm-4 col-lg-2 card2sty">
+          <img src="gallery/laptop2.jpeg" style="margin:5px; max-height:200px; max-width:200px;" alt="lap2" class="image-fluid">
+          <div class="card-body cd-txt">
+            <h4 class="card-title">Asus VivoBook</h4>
+            <p class="card-text txt-sz">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nihil.</p>
+            <a href="#" class="btn btn-warning bb-btn">Buy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------------------------------Card2---------------------------------------------------->
+
+<!------------------------------------------------------Mobiles---------------------------------------------------->
+<div class="container-fluid" style="background-color:#F0F8FF; border-bottom:1px solid darkgray; overflow:hidden;">
+  <h4 class="cd-h4 mt-2 mb-2">Latest Mobiles Collections</h4>
+  <div class="row">
+    <img src="gallery/mb1.png" class=" mt-2 mb-2 col-6 col-sm-4 col-lg-3 image-fluid" onclick="window.location.assign('https://www.google.com')">
+    <img src="gallery/mb2.jpg" class=" mt-2 mb-2 col-6 col-sm-4 col-lg-3 image-fluid" onclick="window.location.assign('https://www.google.com')">
+    <img src="gallery/mb3.jpg" class=" mt-2 mb-2 col-6 col-sm-4 col-lg-3 image-fluid" onclick="window.location.assign('https://www.google.com')">
+    <img src="gallery/mb4.jpg" class=" mt-2 mb-2 col-6 col-sm-4 col-lg-3 image-fluid" onclick="window.location.assign('https://www.google.com')">
+  </div>
+</div>
+<!------------------------------------------------------Mobiles---------------------------------------------------->
+
+<!------------------------------------------------------Footer---------------------------------------------------->
+    <footer class="footdes">
+        <div class="container-fluid footer-1">
+            <div class="row">
+              <div class="col-sm-4 foocol">
+                <h4 class="text-white fh4">About Us</h4>
+                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero assumenda laudantium, quos alias obcaecati velit beatae culpa est officia facere, fugiat, voluptate dignissimos tempore. Ab, perspiciatis ut, facere culpa dignissimos in qui aliquam voluptate, animi quidem ea sequi blanditiis totam iste nesciunt est. Quaerat maxime accusantium, itaque iusto incidunt eum? </p>
+               </div>
+              <div class="col-sm-4 foocol">
+                <h4 class="text-white fh4">Categories</h4>
+                <i class="fas fa-tv text-white" > <a href="electronics.html" style="text-decoration: none; list-style:none; display:inline-block;">Electronics</a></i> <br />
+                <i class="fas fa-mobile text-white" > <a href="mobiles.html" style="text-decoration: none; list-style:none; display:inline-block;">Mobiles</a></i> <br />
+                <i class="fas fa-laptop text-white" > <a href="laptops.html" style="text-decoration: none; list-style:none; display:inline-block;">Computers & Laptops</a></i> <br />
+                <i class="fas fa-utensils text-white" > <a href="#" style="text-decoration: none; list-style:none; display:inline-block;">Kitchen Tools</a></i> <br />
+                <i class="fas fa-book text-white" > <a href="#" style="text-decoration: none; list-style:none; display:inline-block;">Books</a></i> <br />
+                <i class="fas fa-tshirt text-white" > <a href="#" style="text-decoration: none; list-style:none; display:inline-block;">Fashion Wear</a></i> <br />
+                <i class="fas fa-running text-white" > <a href="#" style="text-decoration: none; list-style:none; display:inline-block;">Sports</a></i> <br />
+                <i class="fas fa-rupee-sign text-white" > <a href="#" style="text-decoration: none; list-style:none; display:inline-block;">Recharge</a></i>  <br />
+                <i class="fas fa-gift text-white" > <a href="#" style="text-decoration: none; list-style:none; display:inline-block;">Offer Zone</a></i> <br />
+              </div>
+              <div class="col-sm-4 foocol">
+                <h4 class="text-white fh4">Contact Us</h4>
+                <span style="color:antiquewhite; text-transform:uppercase;">Address:</span><span class="text-white"> Eshop , Omni towers ,Nizamabad,Telangana</span><br />
+                <i class="fas fa-envelope text-white" ></i> <span style="color:antiquewhite; text-transform:uppercase;">Mail:</span><span class="text-white" style="overflow-wrap: break-word;"> developer.koushil@eshop.com</span><br />
+                <i class="fas fa-phone-alt text-white" ></i> <span style="color:antiquewhite; text-transform:uppercase;">Telephone:</span><span class="text-white"> (+91)8074786868</span> <br />
+                <br />
+                <br />
+                <pc class="text-white">For any quries please contact us via <a href="mailto:developer.koushil@eshop.com">mail</a> or phone.</p>
+              </div>
+            </div>
+            <div class="row">
+                <div class="footer-2 col-sm foocol-2">
+                    <div class="footer-2-div">
+                    <a href="https://www.facebook.com"><i class="fab fa-facebook text-white"></i></a>
+                    <a href="https://www.twitter.com"><i class="fab fa-twitter text-white"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in text-white"></i></a>
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram text-white"></i></a>
+                    <a class="text-white" style="float:right; margin-right:05px;">&copy;2020 Eshop      Developed by <b>Koushil Mankali</b></a>
+					
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!------------------------------------------------------Footer---------------------------------------------------->
+
+
+    <script src="jquerry.js"></script>
+    <script src="bootstrap.js"></script>
+</body>
+</html>
