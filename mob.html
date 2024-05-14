@@ -492,6 +492,55 @@ const cardsData = [
   // Add more cards here
 ];
 
+const laptop = [
+  { 
+    image1: 'del1.webp',
+    image2: 'redback.jpg',
+    image3: 'redbottom.jpg',
+    image4: 'redtop.jpg',
+    title: 'DEL',
+    description: 'Price-50,000 INR'
+  },
+  { 
+    image1: '2ACER.JPG',
+    image2: 'redback.jpg',
+  image3: 'redbottom.jpg',
+  image4: 'redtop.jpg',
+    title: 'ACER',
+    description: 'Price-25,000 INR'
+  },
+  { 
+    image1: '3APPLE.png',
+    image2: 'redback.jpg',
+  image3: 'redbottom.jpg',
+  image4: 'redtop.jpg',
+    title: 'APPLE LAPTOP',
+    description: 'Price-61,000 INR'
+  },{ 
+  image1: '4HP.webp',
+  image2: 'redback.jpg',
+  image3: 'redbottom.jpg',
+  image4: 'redtop.jpg',
+  title: 'HP',
+  description: 'Price-80,000 INR'
+},{ 
+  image1: '5LENOVO.png',
+  image2: 'redback.jpg',
+  image3: 'redbottom.jpg',
+  image4: 'redtop.jpg',
+  title: 'LENOVO',
+  description: 'Price-59,000 INR'
+},{ 
+  image1: '6ASUS.png',
+  image2: '6ASUS.PNG',
+  image3: 'redbottom.jpg',
+  image4: 'redtop.jpg',
+  title: 'REDMI 10',
+  description: 'Price-20,000 INR'
+},
+  // Add more cards here
+];
+
 // Function to create cards dynamically
 function createCards() {
   const container = document.getElementById('container');
@@ -735,7 +784,7 @@ get[currentSlide].style.width="100%"
           <div class="card-body cd-txt">
             <h4 class="card-title">Dell Inspiron</h4>
             <p class="card-text txt-sz">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nihil.</p>
-            <a href="#" class="btn btn-warning bb-btn">Buy</a>
+            <a href="#" class="btn btn-warning bb-btn" onclick="showPopup(laptop[0])">Buy</a>
           </div>
         </div>
         <div class="card col-sm-4 col-lg-2 card2sty">
@@ -743,7 +792,7 @@ get[currentSlide].style.width="100%"
           <div class="card-body cd-txt">
             <h4 class="card-title">Acer</h4>
             <p class="card-text txt-sz">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nihil.</p>
-            <a href="#" class="btn btn-warning bb-btn">Buy</a>
+            <a href="#" class="btn btn-warning bb-btn" onclick="showPopup(laptop[1])">Buy</a>
           </div>
         </div>
         <div class="card col-sm-4 col-lg-2 card2sty">
@@ -751,7 +800,7 @@ get[currentSlide].style.width="100%"
           <div class="card-body cd-txt">
             <h4 class="card-title">Apple MAC</h4>
             <p class="card-text txt-sz">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nihil.</p>
-            <a href="#" class="btn btn-warning bb-btn">Buy</a>
+            <a href="#" class="btn btn-warning bb-btn"  onclick="showPopup(laptop[2])">Buy</a>
           </div>
         </div>
         <div class="card col-sm-4 col-lg-2 card2sty">
@@ -759,7 +808,7 @@ get[currentSlide].style.width="100%"
           <div class="card-body cd-txt">
             <h4 class="card-title">Hp Pavilion</h4>
             <p class="card-text txt-sz">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nihil.</p>
-            <a href="#" class="btn btn-warning bb-btn">Buy</a>
+            <a href="#" class="btn btn-warning bb-btn"  onclick="showPopup(laptop[3])">Buy</a>
           </div>
         </div>
         <div class="card col-sm-4 col-lg-2 card2sty">
@@ -767,7 +816,7 @@ get[currentSlide].style.width="100%"
           <div class="card-body cd-txt">
             <h4 class="card-title">Lenovo Ideapad</h4>
             <p class="card-text txt-sz">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nihil.</p>
-            <a href="#" class="btn btn-warning bb-btn">Buy</a>
+            <a href="#" class="btn btn-warning bb-btn"  onclick="showPopup(laptop[4])">Buy</a>
           </div>
         </div>
         <div class="card col-sm-4 col-lg-2 card2sty">
@@ -775,7 +824,7 @@ get[currentSlide].style.width="100%"
           <div class="card-body cd-txt">
             <h4 class="card-title">Asus VivoBook</h4>
             <p class="card-text txt-sz">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nihil.</p>
-            <a href="#" class="btn btn-warning bb-btn">Buy</a>
+            <a href="#" class="btn btn-warning bb-btn"  onclick="showPopup(laptop[5])">Buy</a>
           </div>
         </div>
       </div>
