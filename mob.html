@@ -430,6 +430,17 @@ padding: 5px 20px;
    <!-- <img class="detail" src="product-image.jpg" alt="Product Image" width="100%">  -->
     <h2 class="detail">Product Name</h2>
     <p class="detail">Product Details Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <label for="quantity">Select Quantity:</label>
+<select id="quantity" name="quantity" onchange="handleQuantityChange()">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="5">5++</option>
+  <!-- Add more options as needed -->
+</select>
+
     <textarea id="orderMessage" placeholder="Enter your order message"></textarea>
     <button onclick="sendOrder()">Send Order</button>
     <button onclick="closePopup()">Go Back</button>
@@ -540,6 +551,10 @@ const laptop = [
 },
   // Add more cards here
 ];
+
+
+
+
 
 // Function to create cards dynamically
 function createCards() {
@@ -656,6 +671,13 @@ get[currentSlide].style.width="100%"
     
   });
 
+
+
+  function handleQuantityChange() {
+    var quantity = document.getElementById("quantity").value;
+    
+    // You can perform any other actions you need based on the selected quantity
+  }
 
   </script>
 <!------------------------------------------------------Cards---------------------------------------------------->
