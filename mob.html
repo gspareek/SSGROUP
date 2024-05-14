@@ -587,10 +587,17 @@ window.onload = createCards;
 
 // Function to show the popup
 function showPopup(data) {
+  var get= document.getElementsByClassName("get")
   currentSlide=0;
+
+  for(var a=0;a<get.length;a++){
+    get[a].style.width="0%"
+}
+get[currentSlide].style.width="100%"
+
    var details= document.getElementsByClassName("detail")
     document.getElementById("popupBox").style.display = "block";
-  var get= document.getElementsByClassName("get")
+  
   get[0].src=data.image1
   get[1].src=data.image2
   get[2].src=data.image3
@@ -602,8 +609,9 @@ function showPopup(data) {
 
 // Function to close the popup
 function closePopup() {
+  currentSlide=0;
     document.getElementById("popupBox").style.display = "none";
-    currentSlide=0;
+  
 }
 
 // Function to send order (just an alert in this example)
