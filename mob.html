@@ -289,6 +289,52 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+.slide-box {
+  position: relative;
+  max-width: 200px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.slides {
+  display: flex;
+  height: 300px;
+  overflow-y: scroll;
+  transition: transform 0.5s ease;
+}
+
+.get {
+
+
+  max-width:100%;
+  
+  height: auto;
+
+}
+
+.prev-btn,.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+.button{
+padding: 5px 20px;
+    margin-bottom: 30px;
+}
     </style>
 </head>
 <body>
@@ -362,7 +408,9 @@ button:hover {
   </div>
   <div id="popupBox">
     <span class="close" onclick="closePopup()">&times;</span>
-    <img class="detail" src="product-image.jpg" alt="Product Image">
+<div class="slide-box"><div class="slides"> <img class="get" src="" alt="imag 1"><img class="get" src="" alt="Image 2"><img class="get" src="" alt="Image 2"><img class="get" src="" alt="Image 2"></div><button class="prev-btn">&lt;</button><button class="next-btn">&gt;</button></div>
+
+   <!-- <img class="detail" src="product-image.jpg" alt="Product Image" width="100%">  -->
     <h2 class="detail">Product Name</h2>
     <p class="detail">Product Details Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     <textarea id="orderMessage" placeholder="Enter your order message"></textarea>
@@ -373,35 +421,56 @@ button:hover {
 // Sample data for cards
 const cardsData = [
   { 
-    image: 'seting.jpg',
-    title: 'Card 1',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    image1: 'mo1.jpg',
+    image2: 'redback.jpg',
+    image3: 'redbottom.jpg',
+    image4: 'redtop.jpg',
+    title: 'Samsung a1',
+    description: 'Price-20,000 INR'
   },
   { 
-    image: 'https://via.placeholder.com/250x150',
-    title: 'Card 2',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    image1: 'mo2.jpg',
+    image2: 'redback.jpg',
+  image3: 'redbottom.jpg',
+  image4: 'redtop.jpg',
+    title: 'Redmi Mi10',
+    description: 'Price-21,000 INR'
   },
   { 
-    image: 'https://via.placeholder.com/250x150',
-    title: 'Card 3',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    image1: 'mo3.jpg',
+    image2: 'redback.jpg',
+  image3: 'redbottom.jpg',
+  image4: 'redtop.jpg',
+    title: 'POCCO',
+    description: 'Price-11,000 INR'
   },{ 
-  image: 'https://via.placeholder.com/250x150',
-  title: 'Card 1',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  image1: 'mo8.jpg',
+  image2: 'redback.jpg',
+  image3: 'redbottom.jpg',
+  image4: 'redtop.jpg',
+  title: 'Vivo 10',
+  description: 'Price-8,000 INR'
 },{ 
-  image: 'https://via.placeholder.com/250x150',
-  title: 'Card 1',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  image1: 'mo5.jpg',
+  image2: 'redback.jpg',
+  image3: 'redbottom.jpg',
+  image4: 'redtop.jpg',
+  title: 'OPPO MI',
+  description: 'Price-9,000 INR'
 },{ 
-  image: 'https://via.placeholder.com/250x150',
-  title: 'Card 1',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  image1: 'mo9.jpg',
+  image2: 'redback.jpg',
+  image3: 'redbottom.jpg',
+  image4: 'redtop.jpg',
+  title: 'REDMI 10',
+  description: 'Price-10,000 INR'
 },{ 
-  image: 'https://via.placeholder.com/250x150',
-  title: 'Card 1',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  image1: 'mo7.jpg',
+  image2: 'redback.jpg',
+  image3: 'redbottom.jpg',
+  image4: 'redtop.jpg',
+  title: 'SAMSUNG A1',
+  description: 'Price-10,000 INR'
 },
   // Add more cards here
 ];
@@ -415,11 +484,12 @@ function createCards() {
     card.classList.add('card');
 
     const image = document.createElement('img');
-    image.src = data.image;
+    image.src = data.image1;
     image.alt = data.title;
 
     const content = document.createElement('div');
     content.classList.add('card-content');
+//content.innerHTML="<div class='slide-box'><div class='slides'> <img src='image1.jpg' alt='Image 1'><img src='image2.jpg' alt='Image 2'><img src='image2.jpg' alt='Image 2'><img src='image2.jpg' alt='Image 2'></div><button clas='prev-btn'>&lt;</button><button class='next-btn'>&gt;</button></div>"
 
     const title = document.createElement('h2');
     title.classList.add('card-title');
@@ -453,14 +523,20 @@ window.onload = createCards;
 function showPopup(data) {
    var details= document.getElementsByClassName("detail")
     document.getElementById("popupBox").style.display = "block";
-    details[0].src=data.image
-    details[1].innerHTML=data.title
+  var get= document.getElementsByClassName("get")
+  get[0].src=data.image1
+  get[1].src=data.image2
+  get[2].src=data.image3
+  get[3].src=data.image4
+    details[0].innerHTML=data.title
     details[1].innerHTML=data.description
+  //  details[].innerHTML=data.description
 }
 
 // Function to close the popup
 function closePopup() {
     document.getElementById("popupBox").style.display = "none";
+    currentSlide=0;
 }
 
 // Function to send order (just an alert in this example)
@@ -468,6 +544,43 @@ function sendOrder() {
     var message = document.getElementById("orderMessage").value;
     alert("Order sent: " + message);
 }
+
+
+//pop up gallary
+
+
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+  const slides = document.querySelector(".slides");
+  const get = document.getElementsByClassName("get")
+  const slideWidth = document.querySelector(".slides").clientWidth;
+  let currentSlide = 0;
+
+  nextBtn.addEventListener("click", () => {
+    if(currentSlide>=3){
+        currentSlide=-1
+    }
+currentSlide+=1
+    for(var x=0;x<get.length;x++){
+
+        get[x].style.width="0%"
+    }
+   get[currentSlide].style.width="100%"
+    
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentSlide-=1
+    if(currentSlide==-1){
+        currentSlide=3
+    }
+for(var x=0;x<get.length;x++){
+    get[x].style.width="0%"
+}
+get[currentSlide].style.width="100%"
+    
+  });
+
 
   </script>
 <!------------------------------------------------------Cards---------------------------------------------------->
