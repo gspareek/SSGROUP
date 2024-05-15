@@ -306,7 +306,7 @@ button:hover {
 
 .get {
 
-
+transition-duration: 0.2s;
   max-width:100%;
   
   height: auto;
@@ -352,6 +352,42 @@ padding: 5px 20px;
 .rel{
     position: relative;
 }
+
+
+/* popup*/
+ .width{
+  width:100%;
+
+ }
+.popup, #wait {
+            position: fixed;
+            display: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        } 
+        .overlay {
+            position: fixed;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -420,32 +456,58 @@ padding: 5px 20px;
 </div>
 
 <!------------------------------------------------------Carousel---------------------------------------------------->
+<div  id="wait"></div>
 <div class="container" id="container">
+ 
     <!-- Cards will be dynamically added here -->
   </div>
   <div id="popupBox">
-    <span class="close" onclick="closePopup()">&times;</span>
+    <span class="close" onclick="closePopup1()">&times;</span>
 <div class="slide-box"><div class="slides"> <img class="get" src="" alt="imag 1"><img class="get" src="" alt="Image 2"><img class="get" src="" alt="Image 2"><img class="get" src="" alt="Image 2"></div><button class="prev-btn">&lt;</button><button class="next-btn">&gt;</button></div>
 
    <!-- <img class="detail" src="product-image.jpg" alt="Product Image" width="100%">  -->
     <h2 class="detail">Product Name</h2>
-    <p class="detail">Product Details Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p class="detail"></p><span> INR</span>
+    <label for="name">
+      <input type="text" class="contact" placeholder="Name">
+    </label>
+    <label for="contactNO">
+      <input type="text" class="contact" placeholder="Phone No">
+    </label>
     <label for="quantity">Select Quantity:</label>
+
 <select id="quantity" name="quantity" onchange="handleQuantityChange()">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="5">5++</option>
+  
+  
   <!-- Add more options as needed -->
 </select>
 
     <textarea id="orderMessage" placeholder="Enter your order message"></textarea>
-    <button onclick="sendOrder()">Send Order</button>
-    <button onclick="closePopup()">Go Back</button>
+    <button onclick="closePopup1()">BACK</button>
+    <button onclick="sendOrder()">PROCEED</button>
+ 
 </div>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="popup" id="popup">
+    <span class="close-btn" onclick="closePopup()">X</span>
+    <h2 id="lastRes">Final Deal</h2>
+    <p>Product Name: <span id="productName">Product ABC</span></p>
+    <p>Price: $<span id="price">10.00</span></p>
+    <p>Quantity: <span id="quantities">1</span></p>
+    <p>Total Amount: $<span id="totalAmount">10.00</span></p>
+    <p><span id="response"></span></p>
+    
+    <button id="sub" onclick="submitDeal()">Submit Deal</button>
+</div>
+
   <script>
+
+    for(var s=1;s<290;s++){
+
+      document.getElementById("quantity").innerHTML+=`<option value=${s}>${s}</option>`
+    }
 // Sample data for cards
 const cardsData = [
   { 
@@ -454,7 +516,7 @@ const cardsData = [
     image3: 'redbottom.jpg',
     image4: 'redtop.jpg',
     title: 'Samsung a1',
-    description: 'Price-20,000 INR'
+    description: '20000'
   },
   { 
     image1: 'mo2.jpg',
@@ -462,7 +524,7 @@ const cardsData = [
   image3: 'redbottom.jpg',
   image4: 'redtop.jpg',
     title: 'Redmi Mi10',
-    description: 'Price-21,000 INR'
+    description: '21000 '
   },
   { 
     image1: 'mo3.jpg',
@@ -470,35 +532,35 @@ const cardsData = [
   image3: 'redbottom.jpg',
   image4: 'redtop.jpg',
     title: 'POCCO',
-    description: 'Price-11,000 INR'
+    description: '11000'
   },{ 
   image1: 'mo8.jpg',
   image2: 'redback.jpg',
   image3: 'redbottom.jpg',
   image4: 'redtop.jpg',
   title: 'Vivo 10',
-  description: 'Price-8,000 INR'
+  description: '8000'
 },{ 
   image1: 'mo5.jpg',
   image2: 'redback.jpg',
   image3: 'redbottom.jpg',
   image4: 'redtop.jpg',
   title: 'OPPO MI',
-  description: 'Price-9,000 INR'
+  description: '9000'
 },{ 
   image1: 'mo9.jpg',
   image2: 'redback.jpg',
   image3: 'redbottom.jpg',
   image4: 'redtop.jpg',
   title: 'REDMI 10',
-  description: 'Price-10,000 INR'
+  description: '10000'
 },{ 
   image1: 'mo7.jpg',
   image2: 'redback.jpg',
   image3: 'redbottom.jpg',
   image4: 'redtop.jpg',
   title: 'SAMSUNG A1',
-  description: 'Price-10,000 INR'
+  description: '10000'
 },
   // Add more cards here
 ];
@@ -510,7 +572,7 @@ const laptop = [
     image3: 'redbottom.jpg',
     image4: 'redtop.jpg',
     title: 'DEL',
-    description: 'Price-50,000 INR'
+    description: '50000'
   },
   { 
     image1: '2ACER.jpg',
@@ -518,7 +580,7 @@ const laptop = [
   image3: 'redbottom.jpg',
   image4: 'redtop.jpg',
     title: 'ACER',
-    description: 'Price-25,000 INR'
+    description: '25000'
   },
   { 
     image1: '3APPLE.png',
@@ -526,28 +588,28 @@ const laptop = [
   image3: 'redbottom.jpg',
   image4: 'redtop.jpg',
     title: 'APPLE LAPTOP',
-    description: 'Price-61,000 INR'
+    description: '61000'
   },{ 
   image1: '4HP.webp',
   image2: 'redback.jpg',
   image3: 'redbottom.jpg',
   image4: 'redtop.jpg',
   title: 'HP',
-  description: 'Price-80,000 INR'
+  description: '80000'
 },{ 
   image1: '5LENOVO.png',
   image2: 'redback.jpg',
   image3: 'redbottom.jpg',
   image4: 'redtop.jpg',
   title: 'LENOVO',
-  description: 'Price-59,000 INR'
+  description: '59000'
 },{ 
   image1: '6ASUS.png',
   image2: '6ASUS.PNG',
   image3: 'redbottom.jpg',
   image4: 'redtop.jpg',
   title: 'REDMI 10',
-  description: 'Price-20,000 INR'
+  description: '20000'
 },
   // Add more cards here
 ];
@@ -599,9 +661,24 @@ content.appendChild(button);
 
 // Call the function to create cards when the page loads
 window.onload = createCards;
+function showWait(){
 
+  document.getElementById("wait").style.display = "block"; 
+ document.getElementById("wait").innerHTML = '<img class="width" src="./ajax-loader.gif"/>'
+}
+
+function closeWait(){
+  document.getElementById("wait").style.display = "none"; 
+}
 // Function to show the popup
 function showPopup(data) {
+  showWait()
+//  document.getElementById("wait").style.display = "block"; 
+  //document.getElementById("wait").innerHTML = '<img class="width" src="./ajax-loader.gif"/>'
+  var nse=setTimeout(function(){
+    closeWait()
+   
+    
   var get= document.getElementsByClassName("get")
   currentSlide=0;
 
@@ -612,7 +689,8 @@ get[currentSlide].style.width="100%"
 
    var details= document.getElementsByClassName("detail")
     document.getElementById("popupBox").style.display = "block";
-  
+    
+  details[0].setAttribute("data",data)
   get[0].src=data.image1
   get[1].src=data.image2
   get[2].src=data.image3
@@ -620,19 +698,50 @@ get[currentSlide].style.width="100%"
     details[0].innerHTML=data.title
     details[1].innerHTML=data.description
   //  details[].innerHTML=data.description
+},2000)
+
+}
+var set=setInterval(function(){
+if(document.getElementById("popupBox").style.display == "block"){
+
+  if(currentSlide>=3){
+        currentSlide=-1
+    }
+   currentSlide+=1
+    for(var x=0;x<get.length;x++){
+
+        get[x].style.width="0%"
+    }
+     get[currentSlide].style.width="100%"
 }
 
+},3000)
 // Function to close the popup
-function closePopup() {
+function closePopup1() {
   currentSlide=0;
     document.getElementById("popupBox").style.display = "none";
-  
+   
+   
 }
 
 // Function to send order (just an alert in this example)
+var name=''
+var contact=''
+
 function sendOrder() {
     var message = document.getElementById("orderMessage").value;
-    alert("Order sent: " + message);
+    
+    var contacts=document.getElementsByClassName("contact")
+    
+  
+   name=contacts[0].value
+   contact=contacts[1].value
+   
+   
+    var details= document.getElementsByClassName("detail")
+ var db=details[0].getAttributeNode("data").value
+   
+    openPopup(db)
 }
 
 
@@ -643,19 +752,20 @@ function sendOrder() {
   const nextBtn = document.querySelector(".next-btn");
   const slides = document.querySelector(".slides");
   const get = document.getElementsByClassName("get")
+
   const slideWidth = document.querySelector(".slides").clientWidth;
   let currentSlide = 0;
 
-  nextBtn.addEventListener("click", () => {
+  var next= nextBtn.addEventListener("click",() => {
     if(currentSlide>=3){
         currentSlide=-1
     }
-currentSlide+=1
+   currentSlide+=1
     for(var x=0;x<get.length;x++){
 
         get[x].style.width="0%"
     }
-   get[currentSlide].style.width="100%"
+     get[currentSlide].style.width="100%"
     
   });
 
@@ -674,11 +784,62 @@ get[currentSlide].style.width="100%"
 
 
   function handleQuantityChange() {
-    var quantity = document.getElementById("quantity").value;
+  var quantity = document.getElementById("quantity").value;
     
     // You can perform any other actions you need based on the selected quantity
   }
 
+
+  function openPopup(db) {
+showWait();
+    var time=setTimeout(function(){
+      closeWait();
+   let quantity = document.getElementById("quantity").value;
+    let det= document.getElementsByClassName("detail")
+    
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('productName').innerHTML= det[0].innerHTML
+        document.getElementById('price').innerHTML= det[1].innerHTML
+        let price=JSON.parse(det[1].innerHTML)
+      
+        let qua =JSON.parse(quantity)
+
+        document.getElementById('quantities').innerHTML=quantity
+        document.getElementById('totalAmount').innerHTML=qua*price
+        
+      showD()
+
+    },1000)
+    }
+
+    function closePopup() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('popup').style.display = 'none';
+    }
+
+    function submitDeal() {
+     document.getElementById("response").innerHTML="Congratulation! Your deal has successfully submitted to our authorities,we will contact you very soon."
+     document.getElementById("sub").style.display="none"
+     document.getElementById("lastRes").innerHTML="DONE!"
+      //closePopup()
+      //closePopup1()
+        var productName = document.getElementById('productName').innerText;
+        var price = document.getElementById('price').innerText;
+        var quantity = document.getElementById('quantity').innerText;
+        var totalAmount = document.getElementById('totalAmount').innerText;
+        var name = document.getElementById('name').value;
+      
+      var contactNo = document.getElementById('contactNo').value;
+      
+      }
+
+      function showD() {
+  document.getElementById("response").innerHTML=""
+  document.getElementById("sub").style.display="block"
+  document.getElementById("lastRes").innerHTML="Finel Submition"
+
+}
   </script>
 <!------------------------------------------------------Cards---------------------------------------------------->
 <div class="container-fluid pt-2 pb-2" style="background-color:#F0FFFF; border-bottom:1px solid darkgray;">
