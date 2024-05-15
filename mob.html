@@ -359,7 +359,7 @@ padding: 5px 20px;
   width:100%;
 
  }
-.popup, #wait {
+.popup {
             position: fixed;
             display: none;
             top: 50%;
@@ -371,6 +371,20 @@ padding: 5px 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             z-index: 1000;
+        } 
+
+         #wait {
+            position: fixed;
+            display: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 10001;
         } 
         .overlay {
             position: fixed;
@@ -467,7 +481,7 @@ padding: 5px 20px;
 
    <!-- <img class="detail" src="product-image.jpg" alt="Product Image" width="100%">  -->
     <h2 class="detail">Product Name</h2>
-    <p class="detail"></p><span> INR</span>
+    <span>PRICE-</span><span class="detail"></span><span> INR</span> <br><br>
     <label for="name">
       <input type="text" class="contact" placeholder="Name">
     </label>
@@ -698,7 +712,7 @@ get[currentSlide].style.width="100%"
     details[0].innerHTML=data.title
     details[1].innerHTML=data.description
   //  details[].innerHTML=data.description
-},2000)
+},1000)
 
 }
 var set=setInterval(function(){
@@ -715,7 +729,7 @@ if(document.getElementById("popupBox").style.display == "block"){
      get[currentSlide].style.width="100%"
 }
 
-},3000)
+},1000)
 // Function to close the popup
 function closePopup1() {
   currentSlide=0;
@@ -819,9 +833,13 @@ showWait();
     }
 
     function submitDeal() {
+      showWait()
+      var newtime=setTimeout(function(){
+      closeWait();
      document.getElementById("response").innerHTML="Congratulation! Your deal has successfully submitted to our authorities,we will contact you very soon."
      document.getElementById("sub").style.display="none"
      document.getElementById("lastRes").innerHTML="DONE!"
+  
       //closePopup()
       //closePopup1()
         var productName = document.getElementById('productName').innerText;
@@ -831,7 +849,7 @@ showWait();
         var name = document.getElementById('name').value;
       
       var contactNo = document.getElementById('contactNo').value;
-      
+      },2000)
       }
 
       function showD() {
