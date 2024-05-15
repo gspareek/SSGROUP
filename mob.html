@@ -846,13 +846,16 @@ showWait();
     var time=setTimeout(function(){
       closeWait();
    let quantity = document.getElementById("quantity").value;
+
+
+
     let det= document.getElementsByClassName("detail")
     
         document.getElementById('overlay').style.display = 'block';
         document.getElementById('popup').style.display = 'block';
         document.getElementById('productName').innerHTML= det[0].innerHTML
         document.getElementById('price').innerHTML= det[1].innerHTML
-        let price=JSON.parse(det[1].innerHTML)
+        let price=JSON.parse(det[1].innerText)
       
         let qua =JSON.parse(quantity)
 
