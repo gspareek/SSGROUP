@@ -491,10 +491,12 @@ padding: 5px 20px;
     <h2 class="detail">Product Name</h2>
     <span>PRICE-</span><span class="detail"></span><span> INR</span> <br><br>
     <label for="name">
+      <p id="name"></p>
       <input type="text" class="contact" placeholder="Name">
     </label>
     <label for="contactNO">
-      <input type="text" class="contact" placeholder="Phone No">
+      <p id="con"></p>
+      <input type="text" id="contact" class="contact" placeholder="Phone No">
     </label>
     <label for="quantity">Select Quantity:</label>
 
@@ -506,7 +508,8 @@ padding: 5px 20px;
 
     <textarea id="orderMessage" placeholder="Enter your order message"></textarea>
     <button onclick="closePopup1()">BACK</button>
-    <button onclick="sendOrder()">PROCEED</button>
+    <button onclick="valDetails()">PROCEED</button>
+   <!-- <button onclick="sendOrder()">PROCEED</button>-->
  
 </div>
 
@@ -636,7 +639,33 @@ const laptop = [
   // Add more cards here
 ];
 
+function valDetails(){
+            let name = document.getElementsByClassName("contact")[0].value
+            let contactNumber = document.getElementsByClassName("contact")[1].value;
+alert("name")
+          if (!name||contactNumber.length < 10) {
+            if(!name){
+              document.getElementById("name").innerHTML="Name is mandatory"
+              document.getElementById("name").style.color="red"
+            }
+            if(contactNumber.length < 10){
+              document.getElementById("con").style.color="red"
+              document.getElementById("con").innerHTML="Write contact correctly"
+  
+            }
+            
+              
+            }
+else{
+ sendOrder()
+}
+}
+            // If validation passes, you can proceed with further actions like saving data or processing.
+        
 
+          
+        
+        
 
 
 
@@ -844,7 +873,7 @@ showWait();
       showWait()
       var newtime=setTimeout(function(){
       closeWait();
-     document.getElementById("response").innerHTML="Congratulation! Your deal has successfully submitted to our authorities,we will contact you very soon."
+     document.getElementById("response").innerHTML="<span>Congratulation! Your deal has successfully submitted to our authorities,we will contact you very soon.<span><br> <button onclick='printPage()'>Print</button>"
      document.getElementById("sub").style.display="none"
      document.getElementById("lastRes").innerHTML="DONE!"
   
@@ -859,7 +888,9 @@ showWait();
       var contactNo = document.getElementById('contactNo').value;
       },2000)
       }
-
+      function printPage() {
+            window.print();
+        }
       function showD() {
   document.getElementById("response").innerHTML=""
   document.getElementById("sub").style.display="block"
