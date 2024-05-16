@@ -635,7 +635,14 @@ const laptop = [
   image4: 'redtop.jpg',
   title: 'REDMI 10',
   description: '20000'
-},
+  },{ 
+ image1: '6ASUS.png',
+ image2: '3APPLE.png',
+ image3: '4HP.webp',
+ image4: '5LENOVO.png',
+ title: 'LAPTOPS',
+ description: '60000'
+ },
   // Add more cards here
 ];
 
@@ -962,7 +969,7 @@ showWait();
                         <div class="card-body">
                           <h4 class="card-title">Lap-Tops</h4>
                           <p class="card-text">All companies all modals availablity </p>
-                          <button class="btn btn-warning" type="button">Buy</button>
+                          <button class="btn btn-warning" type="button" onclick="showPopup(laptop[6])">Buy</button>
                         </div>
                     </div>
                   </div>
@@ -1035,7 +1042,7 @@ showWait();
           <img src="DEL1.webp" style="margin:5px; max-height:200px; max-width:200px;" alt="lap1" class="image-fluid">
           <div class="card-body cd-txt">
             <h4 class="card-title">Dell Inspiron</h4>
-            
+
             <p class="card-text txt-sz">10% less</p>
             <a href="#" class="btn btn-warning bb-btn" onclick="showPopup(laptop[0])">Buy</a>
           </div>
