@@ -28,7 +28,9 @@
 
     <style>
 
-
+html{
+    scroll-behavior: smooth;
+}
 .containers {
     width: 100%;
     box-sizing: border-box;
@@ -346,14 +348,14 @@ color: #f9f9f9;
         <div  class="containerit subhead">
             <div class="services">
               <div class="service"> <a href="#res">Responsive Web Design</a> </div>
-              <div class="service"><a href="#sea">Search Engine Optimization<</a></div>
+              <div class="service"><a href="#sea">Search Engine Optimization</a></div>
               <div class="service"><a href="#eco">E-commerce web Application</a> </div>
               <div class="service"><a href="#con"> Content Management System(CMS)</a></div>
               <div class="service"><a href="#cus">   Custom Web Application System  </a></div>
               <div class="service"><a href="#ui"> UI/UX Design </a></div>
               <div class="service"><a href="#web">Web Hosting And Maintanace</a> </div>
               <div class="service"><a href="#mob">   Mobile App Development </a></div>
-              <div class="service"><a href="#dyn"></a> Dynamic Web-Development</div>
+          <!--    <div class="service"><a href="#dyn"></a> Dynamic Web-Development</div> -->
             </div>
           </div>
     </div>
@@ -362,7 +364,7 @@ color: #f9f9f9;
         <h1 class="subhead design">Our services</h1>
     </div>
     <div class="containers">
-          <div class="detailss">
+          <div id="tec" class="detailss">
             <h2 class="subhead">Technological Proficiency</h2>
            <p>Technological proficiency encompasses a deep understanding and adeptness in utilizing various technologies effectively. It involves fluency in programming languages, software tools, and platforms relevant to one's field. Proficient individuals stay updated with emerging technologies, enabling them to adapt quickly to industry shifts and innovate. Whether in software development, data analytics, or digital design, technological proficiency empowers professionals to tackle complex challenges with confidence. It fosters problem-solving skills, encourages continuous learning, and drives efficiency in workflow. Ultimately, technological proficiency is not just about mastering tools; it's about harnessing technology to drive progress, create value, and shape the future of industries and societies.</p>
            
@@ -377,7 +379,7 @@ color: #f9f9f9;
    
         <!-- Repeat the box structure 8 more times -->
         <div class="containers">
-            <div class="boxes">
+            <div id="sea" class="boxes">
               <img src="gseo.png" alt="Image 1" height="100%">
             </div>
               <div class="detailss">
@@ -391,7 +393,7 @@ color: #f9f9f9;
    
             <div class="containers">
                 
-                  <div class="detailss">
+                  <div id="eco" class="detailss">
                     <h2 class="subhead">E-commerce web application</h2>
                     <p>  Building robust online stores equipped with secure payment gateways, inventory management systems, and intuitive user interfaces to facilitate seamless transactions.</p>
                     <p>An e-commerce web application is a digital platform that enables businesses to sell products and services online. It offers a seamless shopping experience, featuring intuitive interfaces, secure payment gateways, and personalized recommendations. Behind the scenes, robust inventory management systems and analytics track sales data, optimizing operations and enhancing customer satisfaction. E-commerce web applications break geographical barriers, allowing businesses to reach a global audience 24/7. They integrate with social media and marketing tools to expand reach and drive engagement. Continuously evolving to meet changing consumer demands, e-commerce web applications represent the convergence of technology and commerce, empowering businesses to thrive in the digital marketplace.</p>
@@ -408,7 +410,7 @@ color: #f9f9f9;
                     <div class="boxes">
                       <img src="congtent-manage.avif" alt="Image 1" height="100%">
                     </div>
-                      <div class="detailss">
+                      <div id="con" class="detailss">
                         <h2 class="subhead">Content Management Systems (CMS)</h2>
                         <p>Developing customizable CMS solutions such as WordPress, Drupal, or Joomla, enabling efficient content creation, organization, and publication.</p>
                       
@@ -424,7 +426,7 @@ color: #f9f9f9;
                        
                        <hr style="width: 90%;color:black">
                        
-                          <div class="detailss">
+                          <div id="cus" class="detailss">
                             <h2 class="subhead">Custom Web Application Development</h2>
                             <p>Designing and developing tailored web applications that address specific business requirements, enhancing efficiency and productivity.</p>
                          
@@ -458,7 +460,7 @@ color: #f9f9f9;
                                 <div class="boxes">
                                   <img src="UX-UI.avif" alt="Image 1" height="100%">
                                 </div>
-                                  <div class="detailss">
+                                  <div id="ui" class="detailss">
                                     <h2 class="subhead">UI/UX Design</h2>
                                     <p>Creating visually appealing interfaces and intuitive user experiences to captivate audiences and drive engagement, fostering positive interactions with the website.
 
@@ -473,7 +475,7 @@ color: #f9f9f9;
    
                                 <div class="containers">
                                 
-                                      <div class="detailss">
+                                      <div id="web" class="detailss">
                                         <h2 class="subhead">Web Hosting and Maintenance</h2>
                                         <p> Providing reliable hosting services and ongoing maintenance to ensure website security, performance optimization, and seamless functionality.
 
@@ -498,7 +500,7 @@ color: #f9f9f9;
                                         <div class="boxes">
                                           <img src="mo-apps.avif" alt="Image 1" height="100%">
                                         </div>
-                                          <div class="detailss">
+                                          <div id="mob" class="detailss">
                                             <h2 class="subhead">Mobile App Development</h2>
                                           <p>Web mobile app development involves creating applications that run on mobile devices through web browsers. It utilizes web technologies like HTML, CSS, and JavaScript and React js Node.js to deliver engaging and responsive experiences</p>
                                           
@@ -508,7 +510,7 @@ color: #f9f9f9;
 </div>
                                         <div class="containers">
    
-                                            <div class="detailss">
+                                            <div id="res" class="detailss">
                                                <h2 class="subhead">Responsive Web Design</h2>
                                                       <p>Responsive web design is an approach to building websites that ensures optimal viewing and interaction experiences across a wide range of devices and screen sizes. It involves designing and developing websites to automatically adapt and adjust their layout, content, and features based on the device being used, whether it's a desktop computer, laptop, tablet, or smartphone. By utilizing flexible grids, fluid images, and CSS media queries, responsive web design aims to provide a seamless and consistent user experience, eliminating the need for separate mobile and desktop versions of a website. This results in improved accessibility, usability, and engagement for website visitors.
 
@@ -761,6 +763,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     <!-- Footer Start -->
+
+    
     <div class="container-fluid position-relative overlay-top bg-dark text-white-50 py-5" style="margin-top: 0px;">
         <div class="container mt-5 pt-5">
             <div class="row">
@@ -772,6 +776,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="col-md-6 mb-5">
                     <h3 class="text-white mb-4">Newsletter</h3>
+                    
                     <div class="w-100">
                         <div class="input-group">
                         
