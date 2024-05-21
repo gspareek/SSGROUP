@@ -183,7 +183,9 @@ float: right;
   .boxes img {
     
     float: none;
-width: 100%;
+width:100%;
+min-height: auto;
+max-height: min-content;
 
 
   }
@@ -191,13 +193,24 @@ width: 100%;
   .boxes{
     box-sizing: border-box;
     width: 100%;
+    padding: 5%;
 }
 .detailss{
     width: 100%;
     flex-direction: column;
+    justify-content: space-around;
+
 }
 .containers{
     flex-direction: column;
+}
+.service{
+    width: 100%;
+    margin: 0px;
+    
+}
+.service-details{
+    width: 100%;
 }
 }
     </style>
