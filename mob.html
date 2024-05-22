@@ -228,6 +228,10 @@ display: flex;
 
 }
 @media all and (max-width:575px){
+
+  .bigcard{
+ padding: 0% 12%;
+ }
     .foocol{
         border-bottom: 2px dotted white;
     }
@@ -278,6 +282,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
+
 }
 
 .card:hover {
@@ -287,6 +292,7 @@ body {
 .card img {
   width: 100%;
   height: 150px;
+  
   object-fit: cover;
 }
 
@@ -540,7 +546,10 @@ button:hover {
 .nav ul li{
   list-style-type: none;
 }
+  .bigcard{
 
+  padding: 0% auto;
+  }
 
 
 
@@ -1208,7 +1217,7 @@ function orderNow() {
           <div class="carousel-item active">
             <div class="container">
               <div class="row">
-                  <div class="col-sm-6 col-lg-3">
+                  <div class="col-sm-6 col-lg-3 bigcard">
                     <div class="card" >
                       <img src="https://palfrey.in/cdn/shop/products/3_20912a49-60f2-472c-b861-f2051325d454_2048x2048.jpg?v=1638443253" class="img-fluid" alt="card1">
                         <div class="card-body">
@@ -1220,7 +1229,7 @@ function orderNow() {
                         </div>
                     </div>
                   </div>
-                  <div class="col-sm-6 col-lg-3 mm">
+                  <div class="col-sm-6 col-lg-3 mm bigcard">
                     <div  class="card">
                       <img src="https://thumbs.dreamstime.com/z/black-wire-bundle-15931728.jpg" class="img-fluid" display="inline-block" width="50%" height="500px" alt="card1">
                         <div class="card-body">
@@ -1231,7 +1240,7 @@ function orderNow() {
                         </div>
                     </div>
                   </div>  
-                  <div class="col-sm-6 col-lg-3 mm">
+                  <div class="col-sm-6 col-lg-3 mm bigcard">
                     <div class="card">
                       <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRgWFhYZGRgYGhgeHBwcHB0fHBwcHBoeGhkcHh0eIS4nHh4rIRkZJjgmKy8xNTc1GiQ7QDs0Py40NTEBDAwMEA8QHhIRHjQhISs0NDQxNDQxNDQ0NDQ0NDQ0NDQ0NDE0NDQ0NDQ0NDQ0PzQ0NDQ0ND80ND8/ND80NDQ0NP/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABQECAwQGBwj/xABGEAACAQIEAwIKBggFAwUAAAABAgADEQQFEiExQVEGIgcTMmFxgZGSodEUQlNiscEVFiMzUnLh8IKiwtLxJESTQ1Syw+L/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAQID/8QAHBEBAQEAAwADAAAAAAAAAAAAAAERITFBAhKB/9oADAMBAAIRAxEAPwD2aIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiJz2fYnFIlR6VLXpVioD7k227tt+e29zaB0MTwt+0OMTd0xinc27/H4Sf7N9qM0qXKYV6qBlB8ZZGHWzMVvx534S4PVYnLtneOHHLHP8teifxYR+sOL55ZW9VSif8AVIOoicue1FUeXl+LH8qq/wAFJhe22GH71a9Hz1aLoPbaB1ESOwGc4et+6rU3vyDC/s4zS7aZi+HwVatT8tFFja+nUyqWtz0gk+qBLYjFIgu7qg6sQPxkae1GDBscTTHpa3xM4HstleFfEYinjqpq1tYNLxjsFqUWUMlRbEByxLdbW9Mw4fsrhHxNWjWrVMNUVzoRWCoyHyGQuDqv/e95R6nhcxo1P3dWm/8AKwb8DNueaYjwWrxo4pr8taK3+ZNJmBOz2cYb9zWFRRyFQ/8Axqgj4yD1KJ5qvbTHYcquLwbWJsGA0jz3dSyfhNTMPCTTrP4tKv0an9arp1uTzVANh6f+IHptfFInluq/zMB+Jl1DEK4ujKw6qQR8J5thMxyXixau54vVV6jN57HYeoCYcyxOXoPHYJ2w2IQXTSjpTe2+l1I0lTwv/wAQPVYnH4bwgYHQhqV1Vyo1KAxs1u8AQLEXvM6eEDLibfSVHpV/9sDqYkVl/aDC1jaliKbk8AHGr3TvJWAiIgIiICIiAiIgIiWax1HtgXxMJxCDiy+0Sw42mONRPeHzgbMTUOY0ftafvr85T9J0Ptqfvr84G5KETT/StD7an76/OU/S2H+3pe+vzgaeYdmMJWJNTD0yx+so0t7y2PxkZW7HEArRxmJRSCCjstWmQRYgq4uRbbjJ/wDS2H+3pe+vzlf0rQ+2p++vzgeY4zwaYsU/FrXo1aYJKpUQjRfjoPeKf4SJD1/B7mewIVwvk3rEhR0GrcCezfpSh9tT99fnK/pKj9tT99fnA8gwvZPO0BCVAidDXIUD1X2mnQy/H1qxpCv48rbUaTuyKTyao4Cr8fMDO/zCv9OxD0DU0YSjp1kMFNdzvoDX/djmRz4dV6nBLQpIEpeLRF4KpAA9ko8xxPgzxji30iiq/wAPfO/nNt/TInMfBjjqS60anWN91W4YDr37X9s9vFZf4h7RK6x1Eg+d6+S43CnxlbDuVF76gWQ+nTcD0m01VxWGrVE+kIKFO92NFN2HQMXK2849k+lZy2e9hsHiQxNMU3P10AUk/eXyW9Yl0QOVdlMmxKjxDMx6CtUDe6zflNnEeC3CN5FSuh/mRh7GQzjc38FmKonXhnDgbjSdD+bunYn0ETFg+0ebYKy1Q7KOVZHI9AcA/AwJLtF2ZqZfT8Yy0sXh9QDK6aKqX2BWoh1C5NrjnbYzoOx2cMlShTFR6mGxSOaPjDerRqU96lF2+soHA+j0nmX7WYvMGWicM70wys9OmhC1LbqHdiQqagCb2uB6x2PZLszXR0q4kqDTNVqaLY2er5bMRte2wUXHO8DuIiJAiIgIiIHlPhCzGuuLKJVdVFNCFV2Ub3ubA7mcz9KrNxq1D6XY/nJzwnVNONva/wCyp7cNy7KJzGOxzUU1sgIvawY3+K+abnTNbJZzxZj6zKqhPMzJTYMoYcwD7ZgpYlmBKoLBmXdrX0sVPI9DKi9qMCjNXL828dq0Ie6bG7D07Wilm4aq1IIda8d1ty9fMcpGm14iU8RMGKzYI6IyNqfybFbcbb7zJi8yFMBnRrMwW40nc+uXgVNCPEytbGKrhNLFipba1rAgcSRzMwV8zVHVGRwz+SO7vvbiG2kGUUYNGY8ZmK0lDOjgE2Hkne1+AY9JfXxgRC7IwUWue6eJsNg1+cB4qBTlKWLDrrVGK2vew4ei95Y2PTQtS50ta2xubmw2gZ9ExmnLcRi1RS7Bgotva/HYcJQYtSmuzadOq+k+Ta9+HSBdpPWXDVyY+0zFhsYjjUmph/K3L1S2hmFNrhSx0mxsrbHp5Mo3EquODuPQx+c2Ex9YcKtQeh2+c0PpaBWYtYIbNcEEHbiCL8x7YONTTq7wUC99D2t1vbhHAlBnGJH/AHFX33+cuGf4kf8AcVfW7H8TIili0calJYHmFYj22lKeLRxdG1fygn8BHAml7V4tdlrv7FP4ibA7cY1f/VB9KJ+SznkqBuG+5HrHEemUrJeMg6RPCNjB9m3pQ/kRNmn4TsSPKpUj6A4/1GcaKRmUILR9Ymu3peFF/rYZT6HI/FTJ3sz25TF1hR8UyMVYg6gwOncjgLbTykoJ0vgzp/8AXfy06h+Kj85L8cJXscREw08d8LCMcUNK6mFKmbdbVGNvhOJzvH4rE0xTejUsDe5bVva07zwpE/TEAvc06Y247u84btHUeiq6WdX16T3ibWBuNz1E3Ok9TmGSyKDxCqPhIYZlXpB6fiKjLrdhp3U6nLA7A+b2TZzYtToMytUDBFILE87XNjsRubS7LizYdHZnLMGueA2AItyvvw9EtRC5DjK2HD/sKpD8bKeFrWsRMWExVVMS2IWhU3vtpNxw5kW5SS7NYl6yOXqOWDAKABvw22HnlMFinbE1KTVHCJe2y3vyB26m0itDM8dUrV6dXxFTuG5BU3JJueAsJnzvNXxGhfFVAwZSSVtw9A853mxjcTUTE06IdtLqCdlJ31cO75pf2hxb0FVkdiC5W5C7gDpp2PzgX5himo4inVCMwCMNl1WJYddpE5hmJqYhKopVLJuRp3O5JsBsBvJ3MqzJQZ1qFmVQd1WwJNiD3d/TLcuqtUpK5qMGYEkAJYW4b6f7tAhu0OcnEhQKbhg1z3QL90jYLz3mXNO0K1aJpBHDEKBsABYqd7bnyZu5DjHrozNU0srAABR3tgTyNrXjAYx3r1abPZU1WOkXNr2B9NreuQamC7RJToeJZGuL76Re9reVe9vNLavdwdMkHulCfRqJm7VxjjEpR1DSygkkbi+rpy2HKUzbGvSemqsGDsQTboVG24/ilGrnHaBK9HxarZu7wUDZSCSxB3NhxlU7RUhhjR097xekHT3r2t5V/wCxN7N6zUaZdWVjdfq7d7jzG4v8IZ2FDxt1voL208CBex3gRnZ/PqVGloYC92N9Nzv0N9pi7O51TovUZ1BDtcBlJ2uTy4HeSeWvUq0hVsgFyCdBIFjbc6+O02TTc8Wp/wDjP++BD4zELUo4l18lnS3LkgmzVz/DnCtTCrrNPTf9pctptfytPwtMlfHlKdUlVJRwtgLKb6dyLn+LrymRqbiia2hLaNX7sgHa9tWr1QMfZztBh6OGNOp5fesdINrkkb6SefIiYOx2d0KCuKyq2o3AIvY2FjflzuPRNnK6LVqYqhEANwf2ZIFjbyry3JKTYnUUopdGsQEufTA28srB1d14M7kejUZJYlEGnQSRbe/XpwF5DYvHGinkKCKhSw2AsTc2t5uE2sWaiUPHkIVtcb/8kcDylliY3aFNCGLmxA22vfzcOtt9prqgJ6AzSo4l3QOAtipI3PLle0swGMaqgcKAL24nj7JdhiWxtNFICPrFtzpC79LDzWnQ+C9f+tqHpRf41EnDYHHtU1WVRoNj3j1I/h8073wVqfpVUn7L08XX5SXM4JM4erRETm08d8LKFsXTUNpJp0hq6ftG3nIY3s3q2bEO4BPMMPSJ1nhXLnG0wltfi6em/C+pzvac5VGPtpZqRsTs2vY89j6BNRmorDYFq9Z8M1dwqjyncaSBuAbjb2mYqtJ6VRMMteppYbbgABrgi3+HrKVFrUK2tjTL1jawBK8QOoI4iZc6wWJpOter4sFQAALkW3G497nCqZlg3wI/Z123cA6bAXG4I23taZcdkz4dTiBiCXZNTWAuQ3EE9fVLc4weJq0kdwioAXBBNyANzY/hNkHFYjDMqrS8Wzbt3g112PEXt8PbAw4bKKlZExRxBDcF2GsWBtw4C01cDg6uNQl69lptsGUcTpBI0233HGZ8mqYhlalTRG8WpDElhYcLna0w5OK9Fzh0RGcnVpJN9wOBAseXtgVoYetXqVMN4+wUWJKqFIWx3tY8vhKhcRTqU8KtfZgdPdFl1bNx6hZY4r4fEFnRNdY2C6ja+oC1wNt7cZdm1PEU6qYirTVNPdALX43423HEwLcVg6+B0hao77AW0jY2BBubkcuEvxOBxGGD4gVRqYDV3fKD29XBpTNvpFWmrtRCone1Bgbi3Tj8JfWrYjE0CEodxiBrDC11NyADbmIFyZdimCY3xiBtIZTYcFBIGm1uR5S2nhcVjUWszpakdK3FtJLXGwG+6nrwlMtxtd6RRKGsKugtrAttbcHnLcmxVenegtAu6kki4BHM9b8YFofE4kVKRdLIy6trXK6lWxA4bH2y6m+KZmwYdPIKnbbTYNYG3nHsmPA16tCq6tQLPVOoLcXHeJ2t6xK1cRVpYjx70PLGkKxB4KF5c9gYFqjEYcpRBpnXfT5R4ne5sJLHCY4C5WkLdQ/ykZnFeqWp1moFFpWG7X1Eniel51SZizoOKhgCRqc8Re3eY34xBymJD+Irh9Ovxq3t5N+5wmeu2K+jsrFPFhNxqbybchwvYyuMpMyYhVBJ8apsOOwQn4TPiM1rvhzQ8S9imkd0bbdbXPovA1ckrYpaIWlp0HVa5YX3N7geuYOz7YhVY0ghBY3LE8SLG3qM28rx9SlSFI0XPXuDfe4sSLjjyjs5mFbCqyinU7xubKbcLDjzHKUa2Y6jQGoDX41rgHa92GxmzmWIxX0bxbogTY3v3rGw234f1mLMCxpBijKWqO2kjvWOq202M0zIPhigw1VGIUF2Pc4jlbb2wNfDPiFoLamujQ2li31eZA5y3JjiFo9ymGp6uOqwLWNrjhfyreuZaWZkYdUNGp3UYard3ccdzsPQJkyDNlp0dDYetU3uChIF/RuDxPKBo5M1cB2SmGBa7d6wBv8Ahc856j4JGJrViwsfFi46d+1vhPOOz73Vj1a9ul+U9K8E5/b1/wCT/wCwyeJ69TiImWnjHhPxLJmCMql2VadlHEnS5/rOexOeVd3fD1OpN1k34R8alPMtdTyU0dTf9nw23+tOZz7tBSqU3VL6mAAGkjpck2A3Fz65qXhmo/GYl8Q9OqlFylMg8LhiGuQCNuVplzXMXxSaKdJ2Kkajs1gAQAbXt/SbOU5zRpYZabOwddRKlWtcksOVr7ma3ZPOUoLU1Mys5tsGN1IsRcA87wrLic2Z6Zw4pVNegrp22uNzpvcDnwluV5s2HpLRelUvckLsLkk76Sb33twmPK83RMa9ctpW1lJU2v3bbW+6eMtzPNKb4uk4a6Jxaxte5PS/SNFuVY1sNrapTcB2G9rDrbvEX6+qKWMZMS2JNOoE0ixAFxstje9uXXnM/bDOUrqoRw7FrmwPAKQOI883M2zyi2FZFqKW0aVABubne+3T8BAjczx7YirSqpTcqhudgSTqueBIvtzlc9zU4qmFRKhYOCSbHgCLbE9fhJHs9nVKnhlpM6qQWYg31XudvRvwml2PzVKS1NbKpf8AiHIjiOhuOMCuJzwNQajoqa9GgLp8m/Ha9/hGT56tCitF1qAgsdOnYlidxf2eqWYDMaYx1SoXUKVIVjwJsoA39ErmmY02xdBw4KIBqYbgbn+kaMWQZwuHV1cONbE7LsRt19EYDORSxL4jvqr30kLuL2/v1zP2ux9N6aKjqx1k2Ug2FiN7cOM3M7zOi2GdVqIzFUAAO5Nxfb2wIrGZujYlKw16EFibb371yPbL+0GcU6xTQXOl2ZiwN7Hr1MlMozOiuFRGqIGCvcEgNc8j1/rNfshjqCUWFVgraiQNQB4Cx3Pm47+iBiz7OaVWiyIXLNo8oH6tr79NjbzWlcLnlJUVWLAhQD3TyFpNLmNH7RPfX5y79I0vtE99fnKIvKawfxrjg1S4v/KskL24zTwbBnrFSCDU2I3HkL0mXHD9m/8AI34GJ0K/Taf2ie+vzm0hBAINwek0MixtLxQDugYbbsotub3B8xErlB/Ypbhp/AmWVlizxgEUnYBx+BmLM86ovhygclygAGm1iDcAHn6ZfnrWQHo6zJmz0mwrEPTJKAgKRqBBBFx19Elaa2Gzqn9HCO4utNlAseJHmHWWZFnFNKOh6mkgg6dN7kbcRwsCZuYCvSbDKGamG0OrDYNwsNV+PmlnZKpTakVd6SMD9e9yLHgQD159BHoisrx1NDU1NYM5K3B4XNp6d4IawavWKm4KEg9bVP6zgsgqKj1RoR1DsFuDptqNiLEHgPjO78FBAxldRt+zY/56Z/1Rek9etxETDTw3tpUQ5u2vyVPm5U0G1/5jIftQ9PxL6AN9IF9JPlC/DzTofCB2Tr1MbUqJSFRH0sLFQV7iqRYkHivKck/ZaqvHDN7T+TTc6ZqT7NJRFBdf2ZIC6blzuNRPLc3kRhVRswOoDQq8gN9lBtfa+5lr9nH/APav6g3zmM5E4/7Z/df5wqY7UeLFB9AHILsurdh09crktKj4inqpoToBJKKTc7nciQTZOw44ap7Kkp9DdfJSsnmGu3sYGT0dUKVD7Kn7i/KDSw/2VP3F+U5W9cfWf/Eh/K0qcTV83+YfkY0dQ9PDnjSp+4vylhw+G+xp+4s5g4p+Y9jH81lpxb/2f6SjpzhsN9jT9wSxsNhfsafuicwcW/8Abf8A5lpxL9V9pP5CTRvYSlQ+nsrKopW4FbqO6LnTz4mSHaSjhVw7GkKeraxVNJHeG97c5zoXvFi/eO2y8vSWlfFqfKZmHS4A+AgdFkGV0Hoq1QKG0Ar3A2tr+Sx+qLX3kfhcBSbMHpsqinYbW2W4W5A9ZketNBwLgeZjAooDcFg3XUbwJrtTldCnRc01XusoVgLEjVbl5ptZblGHagjlVLFVJXSb7878PP65zrU1YWZnI6FyRLhStsHqAdA5gbWKQImJVO6FqC1riwsuwklicGn0VmHlaCeLXFlvfoZEog0Mm5Dm7Em7E7c/UIGDuLF6mk7W17W6WtKN3s9llGpRDOilt+N7nvEbb9LTD2XoK4dXPkORuXtbpZfXymKlg9IstSoo6BgPyltHAafJqVFvxsw3+EDNmW1OspuVWsAAST3TpNt97d6Sy5BRNNKgod0qLsb2JJPA3/veRJw10ZCzHWdRYkFri1je33RKLhXGwq1PeHyiCSfJaFjamoNjvv8AOaHZrJ0rpfxQZlazd63LpcR9Ff7Wr7R/tmOjlzILI9QDzW/2x+CuULoqVU4aHIA8wYgTvvBW9sfVHWk/40j+U4Knljgkq1S5NzsCSfTpneeCjLKiYt3YPp8Ww1MLXYlLAbDkp4dIvQ9iiImFa2JwaP5Q3HMbGaRyKkf4vaZLRAiP0BS+97Y/QFL73tkvEaIg5DT6t7ZQ5BT6t7ZMRAhT2dp9W9stPZyn1b4fKTkQII9maXVvh8pQ9mafU+wfKT0QID9WKfU+xflLD2Vp9f8AKvynRRA5w9lKfUe6vylh7I0/u+4s6aIHMfqjT+77ggdkKf3PcWdPEDmP1Rp/c/8AGsr+qFL7vuLOmiXRzH6n0vu+4vylR2Qpfd9xZ00Ro5sdk6X3fcWXDstT6j3FnRRGjnh2ZT+Ie6I/VlP4/wDKJ0ERo549mFP1/gJVuzYP1z7BOgiNogE7OgcH+Akjg8vCG9yx4XPL0TfiNCIiQIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgf/Z" class="img-fluid" alt="card1">
                         <div class="card-body">
@@ -1242,7 +1251,7 @@ function orderNow() {
                         </div>
                     </div>
                   </div>   
-                  <div class="col-sm-6 col-lg-3 mm">
+                  <div class="col-sm-6 col-lg-3 mm bigcard">
                     <div class="card">
                       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPcaK4aTsGkspQFv7DeFRHgGD0VeJ7euQzFdaW-4Q9VIYDaw1fGZvSi4Atu_oIit703k0&usqp=CAU" class="img-fluid"/>
                         <div class="card-body">
@@ -1259,7 +1268,7 @@ function orderNow() {
           <div class="carousel-item">
             <div class="container">
               <div class="row">
-                  <div class="col-sm-6 col-lg-3">
+                  <div class="col-sm-6 col-lg-3 bigcard">
                     <div class="card" >
                       <img src="SKS1.jpg" class="img-fluid" >
                         <div class="card-body">
@@ -1270,7 +1279,7 @@ function orderNow() {
                         </div>
                     </div>
                   </div>
-                  <div class="col-sm-6 col-lg-3">
+                  <div class="col-sm-6 col-lg-3 bigcard">
                     <div class="card">
                       <img src="SKS2.jpg" class="img-fluid" alt="card1">
                         <div class="card-body">
@@ -1281,7 +1290,7 @@ function orderNow() {
                         </div>
                     </div>
                   </div>  
-                  <div class="col-sm-6 col-lg-3">
+                  <div class="col-sm-6 col-lg-3 bigcard">
                     <div class="card">
                       <img src="SKS3.jpg" class="img-fluid" alt="card1">
                         <div class="card-body">
@@ -1292,7 +1301,7 @@ function orderNow() {
                         </div>
                     </div>
                   </div>   
-                  <div class="col-sm-6 col-lg-3">
+                  <div class="col-sm-6 col-lg-3 bigcard">
                     <div class="card">
                       <img src="mo9.jpg" class="img-fluid" alt="card1">
                         <div class="card-body">
@@ -1337,7 +1346,7 @@ function orderNow() {
   <div class="row mb-3">
     <div class="col-sm-12 ">
       <h4 class="cd-h4 mt-3 mb-3">Latest Laptops Collections</h4>
-      <div class="card-group">
+      <div class="card-group bigcard">
         <div class="card col-sm-4 col-lg-2 card2sty">
           <img src="DEL1.webp" style="margin:5px; max-height:200px; max-width:200px;" alt="lap1" class="image-fluid">
           <div class="card-body cd-txt">
