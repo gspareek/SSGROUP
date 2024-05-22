@@ -420,11 +420,84 @@ padding: 5px 20px;
             right: 10px;
             cursor: pointer;
         }
+        html{
+          scroll-behavior: smooth;
+        }
+        .nav2{
+          position: sticky;
+          top:0;
+          left:0;
+          z-index: 1;
+        }
+
+
+
+.fon{
+  font-size: 10px;
+}
+
+
+
+  .containermax {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+  }
+  #cartItems {
+    list-style-type: none;
+    padding: 0;
+  }
+  .item {
+    margin-bottom: 10px;
+  }
+  .delete {
+    color: red;
+    cursor: pointer;
+  }
+
+
+
+
+
+
+
+  .popupppro {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 2px solid #000;
+  z-index: 999;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+
+
+button:hover {
+  background-color: #0056b3;
+}
+
     </style>
 </head>
 <body>
 
-  <div class="container-fluid p-0">
+  <!--<div class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
         <a href="index.html" class="navbar-brand ml-lg-3">
             <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-book-reader mr-3"></i>SS INFOTECH</h1>
@@ -461,7 +534,7 @@ padding: 5px 20px;
             <a href="contact.html#link" class="btn btn-primary py-2 px-4 d-none d-lg-block">Join Us</a>
         </div>
     </nav>
-</div>
+</div>  -->
   <!------------------------------------------------------Header---------------------------------------------------->
      <nav class="navbar navbar-expand-lg navbar-light bg-white" style="max-height:70px;z-index:10;">
       <!--  <a class="navbar-brand" href="index.html"><span id="bd-title"><img src="bg-image12.jpg" style="max-height:50px;">SS.INFOTECC</span></a> -->
@@ -474,8 +547,8 @@ padding: 5px 20px;
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
           <button type="button" class="btn btn-danger reg1">Sign In</button>
-          <button type="button" class="btn btn-info reg2"><i class="fas fa-shopping-cart"> Cart</i>
-            &nbsp;<span class="badge badge-light">0</span>
+          <button type="button" class="btn btn-info reg2" onclick="displayItems()"><i class="fas fa-shopping-cart"> Cart</i>
+            &nbsp;<span id="cartcount" class="badge badge-light">0</span>
           </button>
         </div>
       </nav>
@@ -483,8 +556,8 @@ padding: 5px 20px;
       <nav class="nav2">
         <ul class="ul2">
             <li id="one"><a href="index.html">Home</a></li>
-            <li id="two"><a href="mobile.html">Mobiles</a></li>
-            <li id="three"><a href="laptops.html">Computers & Laptops</a></li>
+            <li id="two"><a href="mob.html#container">Mobiles</a></li>
+            <li id="three"><a href="mob.html#com">Computers & Laptops</a></li>
             <li id="four"><a href="about.html">About</a></li>
             <li id="five"><a href="feature.html">Features</a></li>
             <li id="six"><a href="Customer.html">Clients</a></li>
@@ -529,9 +602,27 @@ padding: 5px 20px;
   </a>
 </div>
 
+<div id="product-popup" class="popupppro">
+  <div class="popup-content">
+    <span class="close" onclick="closePopuppro()">&times;</span>
+    <h2>Product Name</h2>
+    <ul id="cartItems"></ul>
+
+    <button onclick="orderNow()">Order Now</button>
+  </div>
+</div>
+
+
+
+<div class="containermax">
+  <h1>Shopping Cart</h1>
+  
+  
+  
+</div>
 <!------------------------------------------------------Carousel---------------------------------------------------->
 <div  id="wait"></div>
-<div class="container" id="container">
+<div  class="container" id="container">
  
     <!-- Cards will be dynamically added here -->
   </div>
@@ -753,15 +844,22 @@ function createCards() {
     description.textContent = data.description;
 
     const button = document.createElement('button');
-button.classList.add('button');
-button.textContent = 'BUY'
-button.addEventListener("click", function() {
+    button.classList.add('button');
+    button.textContent = 'BUY'
+     button.addEventListener("click", function() {
         showPopup(data)
-    });
+     });
 
+     const button1 = document.createElement('button');
+ button1.classList.add('button');
+ button1.textContent = 'Add to Cart'
+  button1.addEventListener("click", function() {
+     addItem(data)
+  });
     content.appendChild(title);
     content.appendChild(description);
 content.appendChild(button);
+content.appendChild(button1);
     card.appendChild(image);
     card.appendChild(content);
 
@@ -959,6 +1057,79 @@ showWait();
   document.getElementById("lastRes").innerHTML="Finel Submition"
 
 }
+
+
+
+
+
+
+//cart
+  // Function to add item to cart
+
+  var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  document.getElementById("cartcount").innerHTML=cartItems.length
+  function addItem(db) {
+    var itemName = db.title
+    if (itemName !== "") {
+      var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+      cartItems.push(itemName);
+     document.getElementById("cartcount").innerHTML=cartItems.length
+alert(cartItems.length)
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+      displayItems();
+    }
+  }
+
+  // Function to display items in cart
+  function displayItems() {
+    var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    var cartList = document.getElementById("cartItems");
+    cartList.innerHTML = "";
+    cartItems.forEach(function(item, index) {
+      var li = document.createElement("li");
+      li.classList.add("item");
+      li.textContent = item;
+      var deleteBtn = document.createElement("span");
+      deleteBtn.classList.add("delete");
+      deleteBtn.innerHTML = "&times";
+      deleteBtn.onclick = function() {
+        deleteItem(index);
+      };
+      li.appendChild(deleteBtn);
+      cartList.appendChild(li);
+    });
+    openPopuppro();
+  }
+
+  // Function to delete item from cart
+  function deleteItem(index) {
+    var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    cartItems.splice(index, 1);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    displayItems();
+    document.getElementById("cartcount").innerHTML=cartItems.length
+  }
+
+  // Display items when page loads
+     
+
+
+
+
+  ///local storage items
+  function openPopuppro() {
+  document.getElementById('product-popup').style.display = 'block';
+}
+
+function closePopuppro() {
+  document.getElementById('product-popup').style.display = 'none';
+}
+
+function orderNow() {
+  // Add your order now functionality here
+  alert('Order placed successfully!');
+}
+
   </script>
 <!------------------------------------------------------Cards---------------------------------------------------->
 <div class="container-fluid pt-2 pb-2" style="background-color:#F0FFFF; border-bottom:1px solid darkgray;">
@@ -975,7 +1146,9 @@ showWait();
                         <div class="card-body">
                           <h4 class="card-title">Electric boards</h4>
                           <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                          <button class="btn btn-warning" type="button">Buy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+  <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
+                          
                         </div>
                     </div>
                   </div>
@@ -985,7 +1158,8 @@ showWait();
                         <div class="card-body">
                           <h4 class="card-title">Fitting-Wires</h4>
                           <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                          <button class="btn btn-warning" type="button">Buy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
                         </div>
                     </div>
                   </div>  
@@ -995,7 +1169,8 @@ showWait();
                         <div class="card-body">
                           <h4 class="card-title">Keyboard</h4>
                           <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                          <button class="btn btn-warning" type="button">Buy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
                         </div>
                     </div>
                   </div>   
@@ -1005,7 +1180,8 @@ showWait();
                         <div class="card-body">
                           <h4 class="card-title">Lap-Top Charger</h4>
                           <p class="card-text">samsung,Dell</p>
-                          <button class="btn btn-warning" type="button">Buy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
                         </div>
                     </div>
                   </div> 
@@ -1021,7 +1197,8 @@ showWait();
                         <div class="card-body">
                           <h4 class="card-title">Lap-Tops</h4>
                           <p class="card-text">All companies all modals availablity </p>
-                          <button class="btn btn-warning" type="button" onclick="showPopup(laptop[6])">Buy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[6])">Buy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[6])">Add to cart</button>
                         </div>
                     </div>
                   </div>
@@ -1031,7 +1208,8 @@ showWait();
                         <div class="card-body">
                           <h4 class="card-title">Printers</h4>
                           <p class="card-text">New Printers, ink change,New Rolls </p>
-                          <button class="btn btn-warning" type="button">Buy</button>
+                           <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+                           <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
                         </div>
                     </div>
                   </div>  
@@ -1041,7 +1219,8 @@ showWait();
                         <div class="card-body">
                           <h4 class="card-title">Maintanace</h4>
                           <p class="card-text">laptop ,Computers,Printers Maintanace facilities </p>
-                          <button class="btn btn-warning" type="button">Buy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+  <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
                         </div>
                     </div>
                   </div>   
@@ -1051,7 +1230,8 @@ showWait();
                         <div class="card-body">
                           <h4 class="card-title">Mobiles</h4>
                           <p class="card-text">All brands/companies </p>
-                          <button class="btn btn-warning" type="button">Buy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
                         </div>
                     </div>
                   </div>                  
@@ -1085,7 +1265,7 @@ showWait();
 <!------------------------------------------------------Banner---------------------------------------------------->
 
 <!------------------------------------------------------Card2---------------------------------------------------->
-<div class="container-fluid" style="background-color:#F0F8FF; border-bottom:1px solid darkgray; overflow:hidden;"> 
+<div id="com" class="container-fluid" style="background-color:#F0F8FF; border-bottom:1px solid darkgray; overflow:hidden;"> 
   <div class="row mb-3">
     <div class="col-sm-12 ">
       <h4 class="cd-h4 mt-3 mb-3">Latest Laptops Collections</h4>
@@ -1096,7 +1276,8 @@ showWait();
             <h4 class="card-title">Dell Inspiron</h4>
 
             <p class="card-text txt-sz">10% less</p>
-            <a href="#" class="btn btn-warning bb-btn" onclick="showPopup(laptop[0])">Buy</a>
+            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[0])">BUy</button>
+            <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[0])">Add+</button>
           </div>
         </div>
         <div class="card col-sm-4 col-lg-2 card2sty">
@@ -1104,7 +1285,9 @@ showWait();
           <div class="card-body cd-txt">
             <h4 class="card-title">Acer</h4>
             <p class="card-text txt-sz">5% less</p>
-            <a href="#" class="btn btn-warning bb-btn" onclick="showPopup(laptop[1])">Buy</a>
+            
+            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[1])">BUy</button>
+            <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[1])">Add+</button>
           </div>
         </div>
         <div class="card col-sm-4 col-lg-2 card2sty">
@@ -1112,31 +1295,35 @@ showWait();
           <div class="card-body cd-txt">
             <h4 class="card-title">Apple MAC</h4>
             <p class="card-text txt-sz">2% offering</p>
-            <a href="#" class="btn btn-warning bb-btn"  onclick="showPopup(laptop[2])">Buy</a>
+            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[2])">BUy</button>
+            <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[2])">Add+</button>
           </div>
         </div>
         <div class="card col-sm-4 col-lg-2 card2sty">
           <img src="4HP.webp" style="margin:5px; max-height:200px; max-width:200px;" alt="lap4" class="image-fluid">
           <div class="card-body cd-txt">
             <h4 class="card-title">Hp Pavilion</h4>
-            <p class="card-text txt-sz"></p>
-            <a href="#" class="btn btn-warning bb-btn"  onclick="showPopup(laptop[3])">Buy</a>
+            <p class="card-text txt-sz"> 10% less</p>
+            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[3])">BUy</button>
+            <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[3])">Add+</button>
           </div>
         </div>
         <div class="card col-sm-4 col-lg-2 card2sty">
           <img src="5LENOVO.png" style="margin:5px; max-height:200px; max-width:200px;" alt="lap5" class="image-fluid">
           <div class="card-body cd-txt">
-            <h4 class="card-title">Lenovo Ideapad</h4>
-            <p class="card-text txt-sz"></p>
-            <a href="#" class="btn btn-warning bb-btn"  onclick="showPopup(laptop[4])">Buy</a>
+            <h4 class="card-title">Lenovo</h4>
+            <p class="card-text txt-sz">10% less</p>
+            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+            <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
           </div>
         </div>
         <div class="card col-sm-4 col-lg-2 card2sty">
           <img src="6ASUS.png" style="margin:5px; max-height:200px; max-width:200px;" alt="lap2" class="image-fluid">
           <div class="card-body cd-txt">
             <h4 class="card-title">Asus VivoBook</h4>
-            <p class="card-text txt-sz"></p>
-            <a href="#" class="btn btn-warning bb-btn"  onclick="showPopup(laptop[5])">Buy</a>
+            <p class="card-text txt-sz">10% less </p>
+            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[5])">BUy</button>
+            <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[5])">Add+</button>
           </div>
         </div>
       </div>
