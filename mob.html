@@ -193,12 +193,23 @@
         border-right: 2px dotted white;
     }
 }
+
+.ulflex{
+  display: none;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+}
 @media all and (max-width:575px){
     .foocol{
         border-bottom: 2px dotted white;
     }
     .foocol:last-child{
         border-bottom: none;
+    }
+
+    .ulflex{
+      display:flex;
     }
 }
 .foocol-2{
@@ -458,7 +469,11 @@ padding: 5px 20px;
     cursor: pointer;
   }
 
-
+.sticky{
+  position: sticky;
+  top:0;
+  left: 0;
+}
 
 
 
@@ -474,6 +489,7 @@ padding: 5px 20px;
   padding: 20px;
   border: 2px solid #000;
   z-index: 999;
+  overflow-y: scroll;
 }
 
 .popup-content {
@@ -495,6 +511,10 @@ button:hover {
 .nav ul li{
   list-style-type: none;
 }
+
+
+
+
     </style>
 </head>
 <body>
@@ -538,7 +558,7 @@ button:hover {
     </nav>
 </div>  -->
   <!------------------------------------------------------Header---------------------------------------------------->
-     <nav class="navbar navbar-expand-lg navbar-light bg-white" style="max-height:70px;z-index:10;">
+     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" style="max-height:70px;z-index:10;">
        <a class="navbar-brand" href="index.html"><span id="bd-title"><img src="bg-image12.jpg" style="max-height:50px;">SS.INFOTECC</span></a>
        <button type="button" class="btn btn-info reg2" onclick="displayItems()"><i class="fas fa-shopping-cart"> Cart</i>
         &nbsp;<span id="cartcount" class="badge badge-light">0</span>
@@ -549,7 +569,7 @@ button:hover {
         </button>
         <div class="collapse navbar-collapse bg-white" style="width:100%;" id="navdp">
           <nav class="nav">
-            <ul>
+            <ul class="ulflex">
                 <li id="one"><a href="index.html">Home</a></li>
                 <li id="two"><a href="mob.html#container">Mobiles</a></li>
                 <li id="three"><a href="mob.html#com">Computers & Laptops</a></li>
@@ -624,7 +644,7 @@ button:hover {
 <div id="product-popup" class="popupppro">
   <div class="popup-content">
     <span class="close" onclick="closePopuppro()">&times;</span>
-    <h2>Product Name</h2>
+    <h2>SELECTED ITEMS</h2>
     <ul id="cartItems"></ul>
 
     <button onclick="orderNow()">Order Now</button>
