@@ -29,11 +29,23 @@
     box-sizing:border-box;
 }
 .nav2{
-  display: flex;
-  flex-wrap: wrap;
+display: flex;
+  flex-wrap:nowrap;
   min-height: 90px;
   align-items: center;
+ 
+ 
+ 
+ 
   
+}
+.navD{
+  display: block;
+  position: sticky;
+ top:70px;
+ left:0;
+ z-index: 1000;
+
 }
 /*------------------------------------------------------Header----------------------------------------------------*/
 #bd-title{
@@ -41,6 +53,7 @@
     font-family: 'Lobster', cursive;
 }
 @media all and (min-width:900px){
+ 
     .mrl{
         margin-left:200px;
     }
@@ -61,6 +74,11 @@
         background-color:#f2f2f2;
         height:30px;
         overflow: hidden;
+      
+      
+      
+      
+
     }
     .nav2 > ul >li{
         display:inline-block;
@@ -76,6 +94,13 @@
         font-weight:bold;
         color:black;
     }
+
+    nav > ul >li >a{
+       font-size:15px;
+       text-decoration: none;
+       font-weight:bold;
+       color:black;
+   }
     #one{
         margin-left:200px;
     
@@ -130,6 +155,7 @@
     }
 }
 @media all and (min-width:577px){
+ 
     .card2sty{
         height:450px;
     }
@@ -143,6 +169,7 @@
 
 
 @media all and (max-width:577px){
+  .navD{display: none;}
     .mm{
         margin-top:10px;
     }
@@ -207,7 +234,9 @@
     .foocol:last-child{
         border-bottom: none;
     }
-
+.fonts{
+  font-size: 10px;
+}
     .ulflex{
       display:flex;
     }
@@ -559,12 +588,12 @@ button:hover {
 </div>  -->
   <!------------------------------------------------------Header---------------------------------------------------->
      <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" style="max-height:70px;z-index:10;">
-       <a class="navbar-brand" href="index.html"><span id="bd-title"><img src="bg-image12.jpg" style="max-height:50px;">SS.INFOTECC</span></a>
-       <button type="button" class="btn btn-info reg2" onclick="displayItems()"><i class="fas fa-shopping-cart"> Cart</i>
+       <a  class="navbar-brand fonts" href="index.html"><span id="bd-title"><img src="bg-image12.jpg" style="max-height:50px;">SS.INFOTECC</span></a>
+       <button type="button" class="btn btn-info reg2 fonts" onclick="displayItems()"><i class="fas fa-shopping-cart"> Cart</i>
         &nbsp;<span id="cartcount" class="badge badge-light">0</span>
       </button>
     
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navdp" aria-controls="navdp" aria-expanded="true" aria-label="Toggle navigation">
+        <button class="navbar-toggler fonts" type="button" data-toggle="collapse" data-target="#navdp" aria-controls="navdp" aria-expanded="true" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse bg-white" style="width:100%;" id="navdp">
@@ -591,7 +620,7 @@ button:hover {
           </button>-->
         </div>
       </nav>
-      
+      <div class="navD">
       <nav class="nav2">
         <ul class="ul2">
             <li id="one"><a href="index.html">Home</a></li>
@@ -605,7 +634,7 @@ button:hover {
             
         </ul>
       </nav>
-
+    </div>
       
 <!------------------------------------------------------Header---------------------------------------------------->
 
