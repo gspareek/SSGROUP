@@ -192,9 +192,10 @@ float: right;
   .boxes img {
     
     float: none;
-width:100%;
+width:95%;
 min-height: auto;
 max-height: min-content;
+margin: 0px 2%;
 
 
   }
@@ -224,6 +225,10 @@ max-height: min-content;
     background: linear-gradient(to bottom right, rgb(255, 255, 255) 50%, rgb(222, 136, 32) 50%); 
 
 }
+}
+#margin img{
+    border-radius: 10px;
+    margin:0px auto;
 }
     </style>
 </head>
@@ -381,7 +386,7 @@ max-height: min-content;
         <div class="container py-5">
             <div class="row">
 		     <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;"> 
-				     <div class="position-relative h-100">
+				     <div class="position-relative h-100" id="margin">
 					     <img class="position-absolute w-100 h-100" src="about.jpg" style="object-fit: cover;">
 				     </div>
 			     </div>
@@ -1024,7 +1029,11 @@ Rajendra Singh, Dhadharia Banirotan</p>
           </div>
         </div>
         <script>
-            
+              document.getElementsByClassName("overlay")[0].style.display = "none";
+              var set=setTimeout(function(){
+         
+ document.getElementsByClassName("overlay")[0].style.display = "block";
+              },10000)
             document.getElementsByClassName("close-btn")[0].addEventListener("click", function() {
               document.getElementsByClassName("overlay")[0].style.display = "none";
             });
