@@ -530,7 +530,7 @@ padding: 5px 20px;
 
 
 .fon{
-  font-size: 18px;
+  font-size: 10px;
   display: inline-block;
   padding: 10px;
 }
@@ -833,6 +833,12 @@ justify-content: space-between;
     <button id="sub" onclick="submitDeal()">Submit Deal</button>
 </div>
 
+
+
+
+
+
+
   <script>
 
     for(var s=1;s<290;s++){
@@ -899,58 +905,64 @@ const cardsData = [
 const laptop = [
   { 
     image1: 'DEL1.webp',
-    image2: 'redback.jpg',
-    image3: 'redbottom.jpg',
-    image4: 'redtop.jpg',
+    image2: 'delback.jpg',
+    image3: 'aceside.jpg',
+    image4: 'DEL1.WEBP',
     title: 'DEL',
     description: '50000'
   },
   { 
     image1: '2ACER.jpg',
-    image2: 'redback.jpg',
-  image3: 'redbottom.jpg',
-  image4: 'redtop.jpg',
+    image2: 'aceside.jpg',
+  image3: 'aceback.jpg',
+  image4: '2ACER.JPG',
     title: 'ACER',
     description: '25000'
   },
   { 
     image1: '3APPLE.png',
-    image2: 'redback.jpg',
-  image3: 'redbottom.jpg',
-  image4: 'redtop.jpg',
+    image2: 'appleback.wepb',
+  image3: 'aceback.jpg',
+  image4: '3APPLE.png',
     title: 'APPLE LAPTOP',
     description: '61000'
   },{ 
   image1: '4HP.webp',
-  image2: 'redback.jpg',
+  image2: 'hpback.avif',
   image3: 'redbottom.jpg',
   image4: 'redtop.jpg',
   title: 'HP',
   description: '80000'
 },{ 
   image1: '5LENOVO.png',
-  image2: 'redback.jpg',
-  image3: 'redbottom.jpg',
-  image4: 'redtop.jpg',
+  image2: 'lenoback.jpg',
+  image3: 'aceside.jpg',
+  image4: 'aceside.jpg',
   title: 'LENOVO',
   description: '59000'
 },{ 
   image1: '6ASUS.png',
   image2: '6ASUS.PNG',
-  image3: 'redbottom.jpg',
-  image4: 'redtop.jpg',
+  image3: 'aceside.jpg',
+  image4: 'asusback.jpg',
   title: 'REDMI 10',
   description: '20000'
   },{ 
  image1: '6ASUS.png',
- image2: '3APPLE.png',
- image3: '4HP.webp',
+ image2: 'aceside.jpg',
+ image3: 'aceback.jpg',
  image4: '5LENOVO.png',
  title: 'LAPTOPS',
  description: '60000'
  },
   // Add more cards here
 ];
+
+
+
+
+
+
 
 function valDetails(){
             let name = document.getElementsByClassName("contact")[0].value
@@ -1312,7 +1324,7 @@ function orderNow() {
                         <div class="card-body">
                           <h4 class="card-title">Electric boards</h4>
                           <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">Buy</button>
   <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
                           
                         </div>
@@ -1324,7 +1336,7 @@ function orderNow() {
                         <div class="card-body">
                           <h4 class="card-title">Fitting-Wires</h4>
                           <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">Buy</button>
                           <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
                         </div>
                     </div>
@@ -1335,7 +1347,7 @@ function orderNow() {
                         <div class="card-body">
                           <h4 class="card-title">Keyboard</h4>
                           <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">Buy</button>
                           <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
                         </div>
                     </div>
@@ -1346,7 +1358,7 @@ function orderNow() {
                         <div class="card-body">
                           <h4 class="card-title">Lap-Top Charger</h4>
                           <p class="card-text">samsung,Dell</p>
-                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">Buy</button>
                           <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
                         </div>
                     </div>
@@ -1374,7 +1386,7 @@ function orderNow() {
                         <div class="card-body">
                           <h4 class="card-title">Printers</h4>
                           <p class="card-text">New Printers, ink change,New Rolls </p>
-                           <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+                           <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">Buy</button>
                            <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
                         </div>
                     </div>
@@ -1385,7 +1397,7 @@ function orderNow() {
                         <div class="card-body">
                           <h4 class="card-title">Maintanace</h4>
                           <p class="card-text">laptop ,Computers,Printers Maintanace facilities </p>
-                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">Buy</button>
   <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
                         </div>
                     </div>
@@ -1396,7 +1408,7 @@ function orderNow() {
                         <div class="card-body">
                           <h4 class="card-title">Mobiles</h4>
                           <p class="card-text">All brands/companies </p>
-                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+                          <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">Buy</button>
                           <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
                         </div>
                     </div>
@@ -1442,7 +1454,7 @@ function orderNow() {
             <h4 class="card-title">Dell Inspiron</h4>
 
             <p class="card-text txt-sz">10% less</p>
-            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[0])">BUy</button>
+            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[0])">Buy</button>
             <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[0])">Add+</button>
           </div>
         </div>
@@ -1452,7 +1464,7 @@ function orderNow() {
             <h4 class="card-title">Acer</h4>
             <p class="card-text txt-sz">5% less</p>
             
-            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[1])">BUy</button>
+            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[1])">Buy</button>
             <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[1])">Add+</button>
           </div>
         </div>
@@ -1461,7 +1473,7 @@ function orderNow() {
           <div class="card-body cd-txt">
             <h4 class="card-title">Apple MAC</h4>
             <p class="card-text txt-sz">2% offering</p>
-            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[2])">BUy</button>
+            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[2])">Buy</button>
             <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[2])">Add+</button>
           </div>
         </div>
@@ -1470,7 +1482,7 @@ function orderNow() {
           <div class="card-body cd-txt">
             <h4 class="card-title">Hp Pavilion</h4>
             <p class="card-text txt-sz"> 10% less</p>
-            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[3])">BUy</button>
+            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[3])">Buy</button>
             <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[3])">Add+</button>
           </div>
         </div>
@@ -1479,7 +1491,7 @@ function orderNow() {
           <div class="card-body cd-txt">
             <h4 class="card-title">Lenovo</h4>
             <p class="card-text txt-sz">10% less</p>
-            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">BUy</button>
+            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[4])">Buy</button>
             <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[4])">Add+</button>
           </div>
         </div>
@@ -1488,7 +1500,7 @@ function orderNow() {
           <div class="card-body cd-txt">
             <h4 class="card-title">Asus VivoBook</h4>
             <p class="card-text txt-sz">10% less </p>
-            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[5])">BUy</button>
+            <button class="btn btn-warning fon" type="button" onclick="showPopup(laptop[5])">Buy</button>
             <button class="btn btn-warning fon" type="button" onclick="addItem(laptop[5])">Add+</button>
           </div>
         </div>
