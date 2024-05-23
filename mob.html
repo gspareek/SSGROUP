@@ -321,7 +321,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 999;
+    z-index: 1001;
 }
 
 /* Close button style */
@@ -473,7 +473,7 @@ padding: 5px 20px;
           position: sticky;
           top:0;
           left:0;
-          z-index: 1;
+          z-index: 0;
         }
 
 
@@ -517,18 +517,22 @@ padding: 5px 20px;
   .popupppro {
   display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 60%;
+  left: 80%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  padding: 20px;
-  border: 2px solid #000;
+  padding: 10px 1px 10px 10px;
+  border-radius: 10px;
+  background-image:linear-gradient(to right, rgb(231, 232, 241),rgb(217, 216, 228));
+  border: 0px solid #000;
+  box-shadow: 5px 5px 5px;
   z-index: 999;
-  overflow-y: scroll;
+  
 }
 
 .popup-content {
   text-align: center;
+  
 }
 
 .close {
@@ -551,8 +555,26 @@ button:hover {
   padding: 0% auto;
   }
 
+#cartdel{
+  font-size: 20px;
+  margin:0% 2% 0% auto;
+  color:#000;
+}
+#cartItems .item{
+  width:100%;
+  font-size: 20px;
+  font-weight: bold;
+  color:gray;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
 
-
+}
+#cartItems{
+  height:250px;
+  overflow-y: scroll;
+  
+}
     </style>
 </head>
 <body>
@@ -957,6 +979,7 @@ function closeWait(){
 }
 // Function to show the popup
 function showPopup(data) {
+  closePopuppro()
   showWait()
 //  document.getElementById("wait").style.display = "block"; 
   //document.getElementById("wait").innerHTML = '<img class="width" src="./ajax-loader.gif"/>'
@@ -1077,6 +1100,7 @@ get[currentSlide].style.width="100%"
 
   function openPopup(db) {
 showWait();
+
     var time=setTimeout(function(){
       closeWait();
    let quantity = document.getElementById("quantity").value;
@@ -1146,12 +1170,13 @@ showWait();
   var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
   document.getElementById("cartcount").innerHTML=cartItems.length
   function addItem(db) {
+    closePopup1();
     var itemName = db.title
     if (itemName !== "") {
       var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
       cartItems.push(itemName);
      document.getElementById("cartcount").innerHTML=cartItems.length
-alert(cartItems.length)
+
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
       displayItems();
     }
