@@ -8,19 +8,25 @@
     <title>Eshop</title>
     <meta name="description" content="Explore computer courses including Tally, RSCIT, and O-Level at SS Infotech Group. We offer IT services, web development, website making, mobile product selling, and printer services.">
     <meta name="keywords" content="SS Infotech Group,SARDARSHAHAR-331403,sardarshahar,  Computer Courses, Tally, RSCIT, O-Level, IT Services, Web Development Services, Website Making, Mobile Products Selling, Printer Services">
-    <link rel="stylesheet" href="./bootstrap.css">
+   <!-- <link rel="stylesheet" href="./bootstrap.css"> -->
+   <link href="img/favicon.ico" rel="icon">
 
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
+    <link href="owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/all.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+   
+   
+   
     
     <link href="img/favicon.ico" rel="icon">
     <link rel="stylesheet" href="feature.css"> 
-
-    <link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+  
     <link rel="stylesheet" href="fix.css">
     <style>
       *{
@@ -29,30 +35,38 @@
     box-sizing:border-box;
 }
 .nav2{
-display: flex;
-  flex-wrap:nowrap;
+display:flex;
+  flex-wrap:wrap;
   min-height: 90px;
   align-items: center;
- 
+}
+  .navD{
+   display:block;
+  position: sticky;
+ top:70px;
+left:0;
+z-index: 2000;
+}
  
  
  
   
-}
-.navD{
-  display: block;
-  position: sticky;
- top:70px;
- left:0;
- z-index: 2000;
 
-}
+
+
+
+
+
+
+
+
 /*------------------------------------------------------Header----------------------------------------------------*/
 #bd-title{
     font-size:25px;
     font-family: 'Lobster', cursive;
 }
 @media all and (min-width:900px){
+  
   
  
     .mrl{
@@ -66,15 +80,21 @@ display: flex;
         position:absolute;
         right:200px;
     }
-}
+
+  }
+    
+    
+
 /*------------------------------------------------------Header----------------------------------------------------*/
 
 /*------------------------------------------------------Nav----------------------------------------------------*/
 @media all and (min-width:991px){
 
+
+
   
     .nav2{
-      
+    
         background-color:#f2f2f2;
         height:30px;
         overflow: hidden;
@@ -84,6 +104,8 @@ display: flex;
       
 
     }
+
+    
     .nav2 > ul >li{
         display:inline-block;
         margin-left:50px;
@@ -116,6 +138,9 @@ display: flex;
     .nav2{
         display:none;
     }
+    
+      
+    
 }
 
 
@@ -180,16 +205,19 @@ display: flex;
     }
 }
 
+
 .card2sty:hover{
     background-color:#F8F8FF;
 }
 /*------------------------------------------------------Card2----------------------------------------------------*/
 
 
-
 @media all and (max-width:577px){
   .navD{display: none;
+    
   }
+  
+
     .mm{
         margin-top:10px;
     }
@@ -245,6 +273,7 @@ display: flex;
   
   flex-wrap: wrap;
   flex-direction: column;
+  
 
 }
 @media all and (max-width:575px){
@@ -261,10 +290,12 @@ display: flex;
 .fonts{
   font-size: 10px;
 }
-    .ulflex{
-      display:flex;
-    }
+  
+  
+    
 }
+
+
 .foocol-2{
     background-color: #172337; 
 }
@@ -564,6 +595,8 @@ padding: 5px 20px;
 
 
 
+
+
 button:hover {
   background-color: #0056b3;
 }
@@ -599,55 +632,26 @@ justify-content: space-between;
 </head>
 <body>
 
-  <!--<div class="container-fluid p-0">
-    <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
-        <a href="index.html" class="navbar-brand ml-lg-3">
-            <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-book-reader mr-3"></i>SS INFOTECH</h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
-            <div class="navbar-nav mx-auto py-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Offering</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="about.html" class="dropdown-item">About courses</a>
-                        <a href="ITservices.html" class="dropdown-item">IT-services</a>
-                        
-                      </div>
-                    </div>
-                <a href="course.html" class="nav-item nav-link active">Courses</a>
-                <a href="mob.html" class="nav-item nav-link">Products</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="detail.html" class="dropdown-item">Course Detail</a>
-                        <a href="feature.html" class="dropdown-item">Our Features</a>
-                        <a href="team.html" class="dropdown-item">Instructors</a>
-       <a href="Student.html" class="dropdown-item">Student</a>
-                        <a href="Customer.html" class="dropdown-item">Client</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="contact.html#link" class="btn btn-primary py-2 px-4 d-none d-lg-block">Join Us</a>
-        </div>
-    </nav>
-</div>  -->
+
+
+
+
   <!------------------------------------------------------Header---------------------------------------------------->
-     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" style="max-height:70px;z-index:10;">
-       <a  class="navbar-brand fonts" href="index.html"><span id="bd-title"><img src="bg-image12.jpg" style="max-height:50px;">SS.INFOTECC</span></a>
-       <button type="button" class="btn btn-info reg2 fonts" onclick="displayItems()"><i class="fas fa-shopping-cart"> Cart</i>
+     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" style="max-height:80px;z-index:10;display:flex;flex-direction: row;flex-wrap: wrap;justify-content: flex-start;">
+       <a   class="navbar-brand fonts" href="index.html"><span id="bd-title"><img src="bg-image12.jpg" style="max-height:50px;">SS.INFOTECC</span></a>
+  <!--  <button type="button" class="btn btn-info reg2 fonts marginR" onclick="displayItems()"><i class="fas fa-shopping-cart"> Cart</i>
         &nbsp;<span id="cartcount" class="badge badge-light">0</span>
-      </button>
+      </button> -->
     
-        <button class="navbar-toggler fonts" type="button" data-toggle="collapse" data-target="#navdp" aria-controls="navdp" aria-expanded="true" aria-label="Toggle navigation">
+     <!--   <button  class="navbar-toggler fonts" type="button" data-toggle="collapse" data-target="#navdp" aria-controls="navdp" aria-expanded="true" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
+        </button> -->
+
+        <button type="button" class="btn btn-info reg2 fonts marginR" onclick="displayItems()"><i class="fas fa-shopping-cart"> Cart</i>
+          &nbsp;<span id="cartcount" class="badge badge-light">0</span>
         </button>
-        <div class="collapse navbar-collapse bg-white" style="width:100%;" id="navdp">
+      
+     <!--   <div class="collapse navbar-collapse bg-white" style="width:100%;" id="navdp">
           <nav class="nav">
             <ul class="ulflex">
                 <li id="one"><a href="index.html">Home</a></li>
@@ -660,7 +664,7 @@ justify-content: space-between;
                 
                 
             </ul>
-          </nav>
+          </nav> -->
          <!-- <form class="form-inline bg-white  my-2 my-lg-0 mrl">
             <input class="form-control mr-sm-2 srh-w bg-white" style="width:500px;" type="search" placeholder="Search..." aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -670,8 +674,9 @@ justify-content: space-between;
             &nbsp;<span id="cartcount" class="badge badge-light">0</span>
           </button>-->
         </div>
+        
       </nav>
-      <div class="navD">
+   <!--   <div class="">
       <nav class="nav2">
         <ul class="ul2">
             <li id="one"><a href="index.html">Home</a></li>
@@ -685,8 +690,44 @@ justify-content: space-between;
             
         </ul>
       </nav>
-    </div>
-      
+    </div> -->
+    <div class="container-fluid p-0">
+      <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+          <a href="index.html" class="navbar-brand ml-lg-3">
+            <!--  <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-book-reader mr-3"></i>SS INFOTECH</h1> -->
+          </a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+              <div class="navbar-nav mx-auto py-0">
+                  <a href="index.html" class="nav-item nav-link">Home</a>
+                  <div class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Offering</a>
+                      <div class="dropdown-menu m-0">
+                          <a href="about.html" class="dropdown-item">About courses</a>
+                          <a href="ITservices.html" class="dropdown-item">IT-services</a>
+                          
+                        </div>
+                      </div>
+                  <a href="course.html" class="nav-item nav-link active">Courses</a>
+                  <a href="mob.html" class="nav-item nav-link">Products</a>
+                  <div class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                      <div class="dropdown-menu m-0">
+                          <a href="detail.html" class="dropdown-item">Course Detail</a>
+                          <a href="feature.html" class="dropdown-item">Our Features</a>
+                          <a href="team.html" class="dropdown-item">Instructors</a>
+         <a href="Student.html" class="dropdown-item">Student</a>
+                          <a href="Customer.html" class="dropdown-item">Client</a>
+                          <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                      </div>
+                  </div>
+                  <a href="contact.html" class="nav-item nav-link">Contact</a>
+              </div>
+              <a href="contact.html#link" class="btn btn-primary py-2 px-4 d-none d-lg-block">Join Us</a>
+          </div>
+      </nav>
 <!------------------------------------------------------Header---------------------------------------------------->
 
 <!------------------------------------------------------Carousel---------------------------------------------------->
@@ -724,7 +765,7 @@ justify-content: space-between;
 <div id="product-popup" class="popupppro">
   <div class="popup-content">
     <span class="close" onclick="closePopuppro()">&times;</span>
-    <h2>SELECTED ITEMS</h2>
+    <h2>ITEMS LIST</h2>
     <ul id="cartItems"></ul>
 
     <button onclick="orderNow()">Order Now</button>
@@ -779,7 +820,7 @@ justify-content: space-between;
 
 <div class="popup" id="popup">
     <span class="close-btn" onclick="closePopup()">X</span>
-    <h2 id="lastRes">Final Deal</h2>
+    <h2 id="lastRes"> START</h2>
     <p>Product Name: <span id="productName">Product ABC</span></p>
     <p>Price: $<span id="price">10.00</span></p>
     <p>Quantity: <span id="quantities">1</span></p>
@@ -1518,10 +1559,9 @@ function orderNow() {
 
 
     <script src="jquerry.js"></script>
-    <script src="bootstrap.js"></script>
+    <!--<script src="bootstrap.js"></script>-->
 
-
-<!--      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     
     <script src="easing.min.js"></script>
@@ -1533,6 +1573,14 @@ function orderNow() {
     <script src="owl.carousel.min.js"></script>
      Template Javascript 
     <script src="main.js"></script>
-  <script src="form.js"></script> -->
+  
 </body>
 </html>
+
+
+
+
+
+
+
+
