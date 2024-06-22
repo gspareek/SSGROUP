@@ -1,0 +1,16 @@
+{
+    "name": "SS INFOTECH",
+    "short_name": "IGROUPS",
+    "start_url": "https://ssgroupservice.com/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+      {
+        "src": "./bg-image12.jpg",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ]
+  }
+  
