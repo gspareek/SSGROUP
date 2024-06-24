@@ -16,7 +16,6 @@ const urlsToCache = [
   '/div.html',
   '/mob.html',
   '/testimonial.html',
-  
   '/styles/main.css',
   '/owl.carousel.css',
   '/owl.carousel.js',
