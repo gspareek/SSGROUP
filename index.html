@@ -503,7 +503,41 @@ margin: 0px 2%;
         
         <script>
             // public/script.js
-        
+            
+  const container = document.querySelector('.bigbox'); // Replace with your actual container class or ID
+  const scrollAmount = container.clientWidth; // Amount to scroll is the width of the container
+
+  let currentPosition = 0;
+  const intervalTime = 2000; // 3 seconds
+
+  function scrollLeft() {
+    // Calculate next position
+    currentPosition += scrollAmount;
+
+    // Reset to start if scrolled beyond the container width
+    if (currentPosition >= container.scrollWidth) {
+      currentPosition = 0;
+    }
+
+    // Scroll container horizontally
+    container.scrollTo({
+      left: currentPosition,
+      behavior: 'smooth'
+    });
+  }
+
+  // Set interval for auto scrolling
+  setInterval(scrollLeft, intervalTime);
+
+
+// Call the function to enable auto scrolling for the container
+
+
+
+// Call the function to enable auto scrolling for 'update-container' elements
+
+
+
         document.addEventListener("DOMContentLoaded", function() {
             const newsListDiv = document.getElementById('setDiv');
         
