@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add News</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+    }
+    
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .article-form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    label {
+        font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="url"],
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #45a049;
+    }
+   </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <!-- <script src="https://sheetdb.io/s/f/m0tkfqo8o8ft9.js"></script>-->
+    <div class="container">
+        <h1>Post</h1>
+        
+            <label for="heading">Heading:</label><br>
+            <input type="text" id="heading" name="heading" required><br><br>
+
+            <label for="imageURL">Image URL:</label><br>
+            <input type="url" id="imageURL" name="imageURL" required><br><br>
+
+            <label for="content">Content1</label><br>
+            <textarea id="content1" name="content1"  required></textarea><br><br>
+            <label for="content">Content2</label><br>
+            <textarea id="content2" name="content2" required></textarea><br><br>
+
+            <button type="submit" onclick="subFun()">Add News</button>
+        
+    </div>
+
+    <script>
+      
+    function subFun(){
+         // Prevent the form from submitting normally
+let head=document.getElementById("heading").value
+let image=document.getElementById("imageURL").value
+let content1=document.getElementById("content1").value
+let content2=document.getElementById("content2").value
+
+        formDataObject={"Heading":head,"Imageurl":image,"content1":content1,"content2":content2}
+      
+        alert(JSON.stringify(formDataObject))
+        
+
+        // Example endpoint URL (replace with your actual endpoint)
+        const apiUrl = 'https://667adee6bd627f0dcc90e0cc.mockapi.io/content';
+
+        // Send data to server using fetch API
+        fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formDataObject),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('News added successfully:', data);
+            // Optionally, show a success message to the user or redirect to another page
+            alert('News added successfully!');
+            form.reset(); // Clear the form fields after successful submission
+        })
+        .catch(error => {
+            console.error('Error adding news:', error);
+            // Display error message or handle appropriately
+            alert('Failed to add news. Please try again later.');
+        });
+    };
+;
+
+    </script>
+</body>
+</html>
