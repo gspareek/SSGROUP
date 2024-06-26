@@ -237,6 +237,112 @@ margin: 0px 2%;
     border-radius: 10px;
     margin:0px auto;
 }
+
+
+.bigbox{
+        width: 100%;
+        overflow-x: scroll;
+        background-color:rgb(243, 235, 235);
+    }
+    .update{
+        height: auto;
+    }
+    .update-container {
+        width:max-content;
+        height:min-content;
+
+        /* Enable horizontal scrolling */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border: 0px solid #ccc;
+        padding: 0px;
+    }
+
+    /* Styling for each update box */
+    .update-box {
+        display: inline-block; /* Display boxes in a row */
+        
+        width: 300px; /* Set width of each box */
+        box-sizing: border-box;
+        border: 0px solid #ddd;
+        
+        box-shadow: 5px 5px 15px gray;
+        background-color:white;
+        
+
+        padding: 0px 0px;
+        margin: 10px 30px;
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    /* Styling for the image */
+    .update-image {
+        width: 100%;
+        height: auto;
+        max-height: 150px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Styling for the update text */
+    .update-text {
+         /* Prevent text overflow */
+        
+        height: 150px;
+        overflow-y: hidden;
+        /* Add ellipsis for overflow text */
+    }
+
+    /* Styling for the Read More button */
+    .read-more {
+        display: block;
+        width: 100%;
+       
+        text-align: center;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 25px 10px;
+    
+        text-decoration: none;
+        cursor: pointer;
+    }
+.read-more a{
+    text-decoration: none;
+    color: white;   
+}
+    .read-more:hover {
+        background-color: #0056b3;
+    }
+    .max{
+        display:block;
+        width:20%;
+        height: 50px;
+    }
+    .padding{
+        padding: 5px 15px;
+    }
+    .arrange{
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100%;
+        color: white;
+        margin-bottom: 0px;
+         
+    }
+    .set{
+        width: 50%;
+    }
+.upimages{
+    display: block;
+    width: 100%;
+    height: 74px;
+
+}
     </style>
 </head>
 
@@ -346,6 +452,105 @@ margin: 0px 2%;
         </div>
     </div>
     <!-- Header End -->
+    <div class="bigbox">
+       
+        <div id="setDiv" class="update-container">
+           
+           <!-- <div class="update-box">
+              <img src="./3APPLE.png" alt="Image 2" class="update-image">
+                <div class="update-text">
+                    <h3>Update 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <button class="read-more">Read More</button>
+            </div>
+            <div class="update-box">
+                <img src="./about.jpg" alt="Image 2" class="update-image">
+                <div class="update-text">
+                    <h3>Update 2</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <button class="read-more">Read More</button>
+            </div>
+            <div class="update-box">
+                <img src="image3.jpg" alt="Image 3" class="update-image">
+                <div class="update-text">
+                    <h3>Update 3</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                <button class="read-more">Read More</button>
+            </div>
+            <div class="update-box">
+                <img src="image4.jpg" alt="Image 4" class="update-image">
+                <div class="update-text">
+                    <h3>Update 4</h3>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <button class="read-more">Read More</button>
+            </div>
+            <div class="update-box">
+                <img src="image5.jpg" alt="Image 5" class="update-image">
+                <div class="update-text">
+                    <h3>Update 5</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                </div>
+                <button class="read-more">Read More</button>-->
+            </div>
+            
+        </div>
+        <!--<a href="pageB.html?apiLink=https://api.example.com/data">Go to Page B</a>
+        <a href="get.html?apiLink=https://api.example.com/data">Go to Page B</a> -->
+        
+        <script>
+            // public/script.js
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const newsListDiv = document.getElementById('setDiv');
+        
+            // Example endpoint URL (replace with your actual endpoint)
+           // const apiUrl = 'https://sheetdb.io/api/v1/ff78n3w1cjbpt';
+           const apiUrl = 'https://667adee6bd627f0dcc90e0cc.mockapi.io/content';
+        
+            // Fetch news articles from the server
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Render each news article
+                    data.forEach(article => {
+                        const articleDiv = document.createElement('div');
+                        articleDiv.classList.add('update-box');
+        
+                        articleDiv.innerHTML = `
+                        
+                            <img src="${article.Imageurl}" alt="${article.Heading}" class="update-image">
+                            <div class="update-text">
+                                <h3 class="padding">${article.Heading}</h3>
+                                <p class="padding" >${article.content1}</p>
+                            </div>
+                            <div class="arrange">
+                            <div style="width:25%" class="set">
+                           
+                                <img  class="upimages" src="update.gif" alt=""> 
+                               
+                                </div>
+                                <div style="width:75%" class="set">
+                            <button class="read-more"><a href="get.html?apiLink=https://667adee6bd627f0dcc90e0cc.mockapi.io/content/${article.id}">Read more</a></button>
+                             </div>
+                            </div>
+                        `
+        
+                        newsListDiv.appendChild(articleDiv);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching news:', error);
+                    // Display error message or handle appropriately
+                });
+        });
+        
+        </script>
+
+    <!-- Header End -->
     <div class="containers">
         <div class="boxes">
             <img src="serviceInfo.jpg" alt="img" width="100%">
@@ -386,6 +591,10 @@ margin: 0px 2%;
             </div>
          </div>
 </div>
+
+   
+
+    
 
     <hr style="width: 70%;border:2px  double">
     <!-- About Start -->
@@ -986,7 +1195,8 @@ Rajendra Singh, Dhadharia Banirotan</p>
 
     <div class="containers">
         <div  class="boxes">
-            <iframe style="border-radius: 10px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1796224.3677252284!2d72.1857382!3d28.4418576!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3914f6a7b0f3df21%3A0xc28964dd87f52da0!2sS.S.INFOTECH!5e0!3m2!1sen!2sin!4v1714157751670!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1796224.3677252284!2d72.1857382!3d28.4418576!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3914f6a7b0f3df21%3A0xc28964dd87f52da0!2sS.S.INFOTECH!5e0!3m2!1sen!2sin!4v1714157751670!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
         </div>
         <div style="background: linear-gradient(to bottom right, rgb(255, 255, 255) 50%, rgb(105, 10, 187) 50%);" class="service-details">
             <div class="service">
