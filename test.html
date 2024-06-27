@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>response trim</title>
+    </head>
+
+    <body>
+        <script>
+
+let longMessage = "This is a very long message that needs to be broken into multiple paragraphs. Each paragraph should be wrapped in a <p> tag to ensure proper formatting. This way, the long message can be displayed nicely in HTML.";
+
+// Split the message by sentence or by a specific length
+let sentences = longMessage.split('.'); // This splits by period. Adjust to your needs.
+
+let paragraphMessages = sentences.map(sentence => {
+    if (sentence.trim().length > 0) {
+        return `<p>${sentence.trim()}.</p>`;
+    }
+    return '';
+}).join('');
+
+alert(paragraphMessages);
+
+// Sending the formatted string to an API
+const apiUrl = 'https://example.com/log';  // Replace with your actual API URL
+
+fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ log: paragraphMessages })
+})
+.then(response => response.json())
+.then(data => console.log('Success:', data))
+.catch(error => console.error('Error:', error));
+
+        </script>
+    </body>
+</html>
