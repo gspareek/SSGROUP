@@ -46,7 +46,7 @@
        
         }
         #cont{
-        background-color:rgba(0, 0, 0, .5);
+        background-color:rgba(0, 0, 0, .2);
         
         }
         #nav{
@@ -1379,7 +1379,32 @@ Rajendra Singh, Dhadharia Banirotan</p>
         </div>
         
  <div>
+<script>
 
+let images = ['class.jpg','studentprize.jpg','allteam.jpg','classteach.jpg'];
+let currentImageIndex = 0;
+const duration = 3000; // Time duration for each image in milliseconds
+let containers11 = document.getElementById('headstyle');
+
+function setBackgroundImage(imageUrl) {
+    if(currentImageIndex==images.length-1){
+        currentImageIndex=0;
+    }
+    let containers11 = document.getElementById('headstyle');
+    containers11.style.backgroundImage = `url('${imageUrl}')`;
+}
+
+
+   
+setInterval(() => {
+    currentImageIndex += 1
+    setBackgroundImage(images[currentImageIndex]);
+}, duration);
+
+
+
+    
+</script>
     <!-- Footer End -->
 
 
@@ -1439,6 +1464,28 @@ btnAdd.addEventListener('click', (event) => {
               });
           });
         }
+
+
+     
+
+    // Force reflow to enable the transition
+    
+
+    
+
+    // Remove the previous image after the transition ends
+     // Match this with the CSS transition duration
+
+
+
+   
+    setInterval(() => {
+        currentImageIndex += 1
+        setBackgroundImage(images[currentImageIndex]);
+    }, duration);
+
+
+
       </script>
   <!--  <script src="form.js"></script> -->
 </body>
