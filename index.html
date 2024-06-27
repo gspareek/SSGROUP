@@ -1383,7 +1383,7 @@ Rajendra Singh, Dhadharia Banirotan</p>
 
 let images = ['class.jpg','studentprize.jpg','allteam.jpg','classteach.jpg'];
 let currentImageIndex = 0;
-const duration = 3000; // Time duration for each image in milliseconds
+const duration = 4000; // Time duration for each image in milliseconds
 let containers11 = document.getElementById('headstyle');
 
 function setBackgroundImage(imageUrl) {
@@ -1392,6 +1392,7 @@ function setBackgroundImage(imageUrl) {
     }
     let containers11 = document.getElementById('headstyle');
     containers11.style.backgroundImage = `url('${imageUrl}')`;
+    containers11.style.backgroundSize='contain';
 }
 
 
